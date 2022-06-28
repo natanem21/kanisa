@@ -24,9 +24,12 @@ include("header.php");
                 <dt>visible</dt>
                 <dd>
 
-                
+
                     <input type="hidden" name="visible" value="0">
                     <input type="checkbox" name="visible" value="1"></dd>
+
+
+                    
             </dl>
             <div id="operation"> 
                 <input type="submit" value="create" name="sb">
