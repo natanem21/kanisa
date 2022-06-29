@@ -10,7 +10,7 @@
 <body>  
 <div class="c">
     <div class="c1">
-        <nav class="n1">"<a href ='about_this_church.php'> <img src='gg.png' alt='profile image' class='profile'>
+        <nav class="n1">"<a href ='about_this_church.php'> <img src='guest/gg.png' alt='profile image' class='profile'>
             <h1 id="h">Ethiopian Orthodox Tewahido Church</h1>
             <h1 id="h">kidane mihret church</h1></a>
         </nav>
