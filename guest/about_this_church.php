@@ -3,7 +3,7 @@ $direct="<a href ='index.php'> <img src='book.svg' alt='profile image' class='pr
 include("header.php");
 ?> 
     <div class="c2">
-
+<img src="gg.png" alt="body image" class="clipo"/>
     </div>
 
 <?php include("footer.php");?>

@@ -1,5 +1,8 @@
 <?php
+session_start();
 require_once("database.php");
+
+
 ob_start();//output beffering is on
 define("_shared",dirname(__FILE__));//chms_for_eotc\private\shared
 define("_private",dirname(_shared));//chms_for_eotc\private
@@ -21,6 +24,12 @@ function is_post_req()
     return $_SERVER['REQUEST_METHOD']=='POST';
 }
 
-
+if(!isset($_SESSION['user']))
+{
+    header("location:"."/chms_for_eotc/guest/login.php");
+}
+else{
+  
+}
 
 ?>

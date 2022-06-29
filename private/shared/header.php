@@ -1,6 +1,4 @@
-
-   
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,6 +11,7 @@
 <body>
     <header>
     <div class="profile_img">
+        <p>well come <?php   echo $_SESSION['user'];?></p>
         <img src="<?php echo WWW_ROOT.'private/shared/loginavatar.png'?>" alt="profile image" class="profile">
     </div>
     <div class="outer">    
@@ -48,6 +47,9 @@
                     </div>
                </ul>
              </div>
+        <ul>
+            <li><a href="<?php echo WWW_ROOT.'private/shared/logout.php';?>" class="">logout</a></li>
+        </ul>
     </div>
     </header>
 

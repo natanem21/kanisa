@@ -33,6 +33,13 @@ body{
 {
     border-radius:0;
 }
+.clipo{
+    clip-path: circle(10% at 50% 50%);
+    position:relative;
+    
+    width: 50vw;
+    height: 50vw;
+}
             /*================
             containers
              ============*/
@@ -83,7 +90,7 @@ nav a:link{
 .cent{
    align-items: center;
    margin-left: 20vw;
-  background-color: #16da16;
+  background-color:#16da16;
    width: 25vw;
    border-radius: 10px;
    font-size:1vw;
@@ -152,3 +159,18 @@ nav{
     border: none;
 }
 
+/*================
+            responsive
+             ============*/
+@media  only screen and (max-width:600px){
+    .cent{
+        align-items: center;
+        margin-left: 20vw;
+       background-color:aqua;
+        width: 25vw;
+        border-radius: 10px;
+        font-size:1vw;
+      
+     }
+
+}

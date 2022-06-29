@@ -7,7 +7,7 @@ li{
     width: 100px;
     height: 100px;
     float: right;
-    margin-right: 10px;
+    margin-right: -120px;
     border-radius: 50px;
     position:relative;  
 }
@@ -24,6 +24,12 @@ li{
 }
 .profile_img{
  content: ""; 
+}
+.profile_img p{
+    color:rgb(6, 58, 100);
+    float:right;
+    position: relative;
+    top:100px;
 }
 .outer{
     height: 25vh;
