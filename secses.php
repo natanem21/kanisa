@@ -1,7 +1,28 @@
 <?php
-session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
 
-$_SESSION['a']="this is from session sec";
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=cman", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+    ?>
+<?php
+try{
 
-echo $_SESSION['pass_correct'];
+$myPDO = new PDO("heroku pg:psql postgresql-deep-05584 --app gorgori");
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo "Connected successfully";
+
+}catch(PDOException $e)
+{
+    echo "<br/>connection failed: ".$e->getMessage();
+}
 ?>

@@ -3,6 +3,16 @@ li{
     list-style: none;
     display: block;
 }
+.info_row
+{
+
+}
+table tr td{
+    color:rgb(139, 65, 65);
+    border:2px 2px black;
+    width: 100px;
+    background-color: aqua;
+}
 .profile{
     width: 100px;
     height: 100px;
