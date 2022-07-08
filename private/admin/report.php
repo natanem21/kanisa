@@ -10,8 +10,32 @@
 </head>
 <body>
     <h1>
-        this will generate both financial and personnel information in the church
-    </h1>
+        this will generate both financial and personnel information in the church  </h1>
+        <table>
+ <tr>
+            <td>
+              ID    
+            </td>
+            <td>
+                  NAME
+            </td>
+            <td>
+                 CHRISTIAN NAME 
+                  </td>
+                  
+                  <td>
+                  PHONE NUMBER
+                  </td>
+                  <td>
+                  position
+                  </td>
+                  <td>
+                  more information
+                  </td>
+</table>
+
+ </tr>
+  
 </body>
 </html>
 <?php
@@ -20,9 +44,11 @@
     $result =$DBC->query($sql);
     if($result)
 {
+
  while($x = $result->fetch_assoc())
  {?>
 <table>
+     
  <tr class="info_row">
       <td>
           <?php echo $x['id']?>
@@ -33,18 +59,16 @@
     <td>
           <?php echo $x['christ_name']?>
     </td>
-    <td>
-          <?php echo $x['gender']?>
-    </td>
-    <td>
-          <?php echo $x['age']?>
-    </td>
+    
+    
     <td>
           <?php echo $x['phone']?>
     </td>
     <td>
-          <?php echo $x['clerical_pos']?>
+    <?php   if($x['clerical_pos']==1) {echo "non clergy";} elseif ($x['clerical_pos']==2) {echo "deacon";}elseif ($x['clerical_pos']==3) {echo "priest";}else 
+  {echo "monk";};?>
     </td>
+    <td><a href="../../public/members/profile/view.php?id=<?php  echo $x['id'];?>">detail information</a>
  </tr><br/>
  </table>
            <?php
