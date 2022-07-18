@@ -63,8 +63,8 @@ include("header.php");
 if(isset($_POST['sb']))
 {
     $sql = " INSERT INTO 
-    members(`name`,`christ_name`,`age`,`gender`,`phone`,`address`,`email`,`martial_stat`,`clerical_pos`,`password`)
-     VALUES('$_POST[u_name]','$_POST[c_name]','$_POST[age]','$_POST[gender]','$_POST[phone_addr]','$_POST[home_addr]','$_POST[email_addr]','$_POST[martial]','$_POST[position]','123')";
+    members(`name`,`christ_name`,`age`,`gender`,`phone`,`address`,`email`,`martial_stat`,`clerical_pos`,`password`,`status`)
+     VALUES('$_POST[u_name]','$_POST[c_name]','$_POST[age]','$_POST[gender]','$_POST[phone_addr]','$_POST[home_addr]','$_POST[email_addr]','$_POST[martial]','$_POST[position]','123',0)";
     if($DBC->query($sql))
 {
     echo " data added succesfully ";

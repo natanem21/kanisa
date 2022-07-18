@@ -33,3 +33,38 @@ else{
 }
 
 ?>
+
+<?php
+    class Baptism {
+        
+        function Values(){
+
+        
+?>
+
+            <div id="bap">
+                <form action="req_services.php" method="post">
+                <lable>name of the person to be baptised</label><br/>
+                <input type="text" name="nm"><br/>
+                <lable>sex</label><br/>
+                <input type="text" name="sx"><br/>
+
+                <label>data of birth</label><br/>
+                <input type="text" name="dob"><br/>
+                <lable>place of birth</label><br/>
+                <input type="text" name="pob"><br/>
+                <lable>fathers name</label><br/>
+                <input type="text" name="fm"><br/>
+                <lable>mothers name</label><br/>
+                <input type="text" name="mm"><br/>
+                <lable>God father or mother name</label><br/>
+                <input type="text" name="Gfm"><br/>
+                <lable>reason</label><br/>
+                <input type="text" name="rm"><br/> </hr>
+                <input type="submit" value="send request" name="sb1">
+                </form> 
+            </div>
+<?php
+}}
+?>
+

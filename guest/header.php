@@ -24,4 +24,4 @@
                 <button class="b" onclick="window.open('req_membership.php','_self')">SIGNUP</button>
             </nav>
         </nav>
-        </div>
+    </div>

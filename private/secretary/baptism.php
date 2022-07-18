@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php include("../shared/init.php");?>
+<?php include(_private."/sec_share/header.php");?><!DOCTYPE html>
 <h1>this register new baptism</h1> 
-</body>
-</html>
+<?php
+  $baptism = new Baptism();
+  $baptism->Values();
+  ?>
+<?php include(_private."/sec_share/footer.php");?>

@@ -11,6 +11,8 @@
 <?php
 
 $sql = "SELECT * from `members` WHERE `id`=$_GET[id]";
+$sql2="UPDATE `members` SET `status` = '1' WHERE `members`.`id` = $_GET[id]";
+$sql3="UPDATE `members` SET `status` = '0' WHERE `members`.`id` = $_GET[id]";
 $result =$DBC->query($sql);
 if($result)
 {
@@ -63,9 +65,65 @@ else {
       # code...
   }else 
   {echo "divorced";};?>
+
   <h3>position : </name><?php   if($x['clerical_pos']==1) {echo "non clergy";} elseif ($x['clerical_pos']==2) {echo "deacon";}elseif ($x['clerical_pos']==3) {echo "priest";}else 
   {echo "monk";};?>
-   <?php }
+
+<h3>account status : </name><?php   
+            if($x['status']==0) 
+            {
+                echo "deactivated  ";
+             ?>
+             <form action="view.php?id=<?php echo $_GET['id']?>" method="post">
+                 <button type="submit" name="act">activate</button>
+
+            </form>
+ <?php   
+            } 
+            else {echo "activated";
+            
+            
+            ?>
+            <form action="view.php?id=<?php echo $_GET['id']?>" method="post">
+                <button type="submit" name="deact">deactivate</button>
+
+           </form>
+<?php   };
+            if(isset($_POST['act']))
+            {
+                $result =$DBC->query($sql2);
+                if($result)
+                {
+                    //echo "worked";
+                    header("location:view.php?id=".$_GET['id']);
+                }
+                else{
+                    echo "not worked";
+                }
+
+
+            }
+            if(isset($_POST['deact']))
+            {
+                $result =$DBC->query($sql3);
+                if($result)
+                {
+                    //echo "worked";
+                    header("location:view.php?id=".$_GET['id']);
+                }
+                else{
+                    echo "not worked";
+                }
+
+
+            }
+            ?>
+
+   <?php
+
+   }
+   
+   
    else{
        echo "error in loading the page.";
    }

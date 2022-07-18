@@ -1,5 +1,5 @@
 <footer>
         &copy <?php echo date('Y');?> chms
-    </footer>
+</footer>
 </body>
 </html>

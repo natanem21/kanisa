@@ -4,8 +4,8 @@ li{
     display: block;
 }
 .profile{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     float: right;
     margin-right: -120px;
     border-radius: 50px;
@@ -24,13 +24,17 @@ li{
 }
 .profile_img{
  content: ""; 
+ margin: 0px;
+ border: 0px;
+
 }
 .profile_img p{
-    color:rgb(6, 58, 100);
+    color:rgb(243, 102, 9);
     float:right;
-    position: relative;
-    top:100px;
+    
+   
 }
+
 .outer{
     height: 25vh;
     width: 75vw;
@@ -38,12 +42,23 @@ li{
     
 }
 .content{
-    height: 50vh;
+ 
     width: 100vw;
+    background-color: #aaa;
+    border: 0px;
+    
+    position:relative;
 }
-.footer{
-    height: 25vh;
+footer{
+    height: 25px;
     width: 100vw;
+    bottom: 0px;
+    position:relative;
+    background-color:aqua;
+}
+header{
+    height: 20vh;
+    background-color: antiquewhite;
 }
 .i{
     display: none;
