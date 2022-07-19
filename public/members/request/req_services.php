@@ -112,6 +112,8 @@
 <?php
 //baptism request
 
+
+
  if(isset($_POST['sb1']))
 {
   $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `sex`, `DOB`, `place_of_birth`,`service_customer`,`reason`) 
