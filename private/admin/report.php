@@ -9,35 +9,35 @@
     <title>report</title>
 </head>
 <body>
-    <h1>
-        this will generate both financial and personnel information in the church  </h1>
-        <table>
- <tr>
-            <td>
-              ID    
-            </td>
-            <td>
-                  NAME
-            </td>
-            <td>
-                 CHRISTIAN NAME 
-                  </td>
-                  
+      <h1>
+            this will generate both financial and personnel information in the church  </h1>
+            <table>
+      <tr>
                   <td>
-                  PHONE NUMBER
+                  ID    
                   </td>
                   <td>
-                  position
+                        NAME
                   </td>
                   <td>
-                      session_status
-                    </td>
-                  <td>
-                  more information
-                  </td>
-</table>
+                  CHRISTIAN NAME 
+                        </td>
+                        
+                        <td>
+                        PHONE NUMBER
+                        </td>
+                        <td>
+                        position
+                        </td>
+                        <td>
+                        session_status
+                        </td>
+                        <td>
+                        more information
+                        </td>
+      </table>
 
- </tr>
+      </tr>
   
 </body>
 </html>

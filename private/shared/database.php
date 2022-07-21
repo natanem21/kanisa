@@ -48,7 +48,7 @@ $sql = " CREATE TABLE IF NOT exists members(
      $sql = " CREATE TABLE IF NOT exists clergy( 
         `c_id` INT(10) NOT NULL,
         `annoitation_Date` date,
-        `annoited_by` INT(10) NOT NULL ,
+        `annoited_by` varchar(20) NOT NULL ,
         `tought_by` varchar(255),
         `on_service_date` int(5),
         `served_churches` varchar(255),

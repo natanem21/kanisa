@@ -1,10 +1,12 @@
 <?php include("../../../private/shared/init.php");?>
 <?php include(_shared."/header.php");?>
 
+        <!-- content of request -->
 <div class="content" style="backgroundcolor:green">
 
     <h1 style="background-color:green">service request</h1>
 
+        <!-- tabs  -->
     <div style="background-color:#6666">
 
         <ul>
@@ -25,11 +27,13 @@
 
     </div>
 
-<?php 
-    $baptism = new Baptism();
-    $baptism->Values();
-?>
-        <div id="mem">
+        <!-- baptism  request  by creating object from class -->
+        <?php 
+            $baptism = new Baptism();
+            $baptism->Values();
+        ?>
+            <!-- memorial request form -->
+         <div id="mem">
             <form action="req_services.php" method="post">
             <lable>name of the person to be memorized</label><br/>
             <input type="text" name="nm"><br/> </hr>
@@ -43,6 +47,7 @@
             </form>
         </div>
 
+            <!-- holy water request form -->
         <div id="hw">
             <form action="req_services.php" method="post">
                 <lable>adddress</label><br/>
@@ -56,14 +61,13 @@
             </form>
         </div>
 
+            <!-- confession father request form -->
         <div id="conf">
 
         </div>
 
-        <!--  tabs emulation -->
+        <!-- tabs simulation -->
         <script>
-
-            //this script is for hiding and revealing the contenets to make it like a link
 
             const bapt = document.getElementById('b');
             const mem = document.getElementById('m');
@@ -109,67 +113,66 @@
         </script>
         
 </div>
+
+         <!-- this is form handler  -->
 <?php
-//baptism request
+        //baptism request
 
-
-
- if(isset($_POST['sb1']))
-{
-  $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `sex`, `DOB`, `place_of_birth`,`service_customer`,`reason`) 
-            VALUES ('$_SESSION[id]', 'baptism', '$_POST[sx]', '$_POST[dob]', '$_POST[pob]','$_POST[nm]','$_POST[rm]');";
-  $result =$DBC->query($sql);
-
-    if($result)
+    if(isset($_POST['sb1']))
     {
-     
+        $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `sex`, `DOB`, `place_of_birth`,`service_customer`,`reason`) 
+                    VALUES ('$_SESSION[id]', 'baptism', '$_POST[sx]', '$_POST[dob]', '$_POST[pob]','$_POST[nm]','$_POST[rm]');";
+        $result =$DBC->query($sql);
+
+            if($result)
+            {
+            
+            }
+            else
+            {
+            echo "error: ".$DBC->error;
+            } 
+
     }
-    else
+
+    //memorial request
+
+    if(isset($_POST['sb2']))
     {
-      echo "error: ".$DBC->error;
-    } 
+        $sql = "INSERT INTO `request` ( `user_id`,`christ_name`, `request_type`, `date`, `service_customer`) 
+                            VALUES ('$_SESSION[id]','$_POST[cm]', 'memorial', '$_POST[dm]', '$_POST[nm]');";
+        $result =$DBC->query($sql);
 
-}
-     ?>
-    <?php
-//memorial request
-
-if(isset($_POST['sb2']))
-{
-  $sql = "INSERT INTO `request` ( `user_id`,`christ_name`, `request_type`, `date`, `service_customer`) 
-                    VALUES ('$_SESSION[id]','$_POST[cm]', 'memorial', '$_POST[dm]', '$_POST[nm]');";
-  $result =$DBC->query($sql);
-
-    if($result)
-    {
-       echo "added succesfully"; 
+            if($result)
+            {
+            echo "added succesfully"; 
+            }
+            else
+            {
+            echo "error: ".$DBC->error;
+            } 
+        //$_SESSION['user'] = " boom this is";
     }
-    else
+
+    //holy water request
+
+    if(isset($_POST['sb3']))
     {
-      echo "error: ".$DBC->error;
-    } 
-  //$_SESSION['user'] = " boom this is";
-}
+        $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `date`, `reason`) 
+                            VALUES ('$_SESSION[id]', 'holy water', '$_POST[dt]', '$_POST[rsn]');";
+        $result =$DBC->query($sql);
 
-//holy water request
+            if($result)
+                {
+                echo "added succesfully"; 
+                }
+            else
+                {
+                echo "error: ".$DBC->error;
+                } 
+        //$_SESSION['user'] = " boom this is";
+    }
 
-if(isset($_POST['sb3']))
-{
-  $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `date`, `reason`) 
-                    VALUES ('$_SESSION[id]', 'holy water', '$_POST[dt]', '$_POST[rsn]');";
-  $result =$DBC->query($sql);
-
-    if($result)
-        {
-        echo "added succesfully"; 
-        }
-    else
-        {
-        echo "error: ".$DBC->error;
-        } 
-  //$_SESSION['user'] = " boom this is";
-}
-   
 
 ?>
     
