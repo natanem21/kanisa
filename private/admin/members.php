@@ -22,12 +22,8 @@
                         <td>
                         PHONE NUMBER
                         </td>
-                        <td>
-                        position
-                        </td>
-                        <td>
-                        session_status
-                        </td>
+                        
+                        
                         <td>
                         more information
                         </td>
@@ -66,13 +62,8 @@
     <td>
           <?php echo $x['phone']?>
     </td>
-    <td>
-    <?php   if($x['clerical_pos']==1) {echo "non clergy";} elseif ($x['clerical_pos']==2) {echo "deacon";}elseif ($x['clerical_pos']==3) {echo "priest";}else 
-  {echo "monk";};?>
-    </td>
-    <td>
-          <?php echo $x['status']?>
-    </td>
+    
+    
     <td><a href="../../public/members/profile/view.php?id=<?php  echo $x['id'];?>">detail information</a></td>
     <td><a href="update.php?id=<?php  echo $x['id'];?>">update</a></td>
  </tr><br/>

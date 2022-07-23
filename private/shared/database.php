@@ -45,7 +45,7 @@ $sql = " CREATE TABLE IF NOT exists members(
      FOREIGN KEY(`user_id`) REFERENCES members(`id`)
      ); "; */
 
-     $sql = " CREATE TABLE IF NOT exists clergy( 
+   /*   $sql = " CREATE TABLE IF NOT exists clergy( 
         `c_id` INT(10) NOT NULL,
         `annoitation_Date` date,
         `annoited_by` varchar(20) NOT NULL ,
@@ -55,7 +55,15 @@ $sql = " CREATE TABLE IF NOT exists members(
         `type` varchar(20),
         `education_back` varchar(255),
          FOREIGN KEY(`c_id`) REFERENCES members(`id`)
-         ); ";
+
+         ); "; */
+         $sql = " CREATE TABLE IF NOT exists clergy_father( 
+            `c_id` INT(10) NOT NULL,
+            `m_id` INT(10) NOT NULL,
+             FOREIGN KEY(`c_id`) REFERENCES clergy(`c_id`),
+             FOREIGN KEY(`m_id`) REFERENCES members(`id`)
+    
+             ); ";
 /*
 
 //this has been added to modify the first table to hokd more information
@@ -73,13 +81,13 @@ $sql = "ALTER TABLE members ADD COLUMN `christ_name` varchar(20)  AFTER `name`;"
 
  */
 
-/*  if($DBC->query($sql))
+ if($DBC->query($sql))
 {
    echo "created table";
 }
 else{
     echo "error: ".$DBC->error;
-} */
+}
 
 
 /*

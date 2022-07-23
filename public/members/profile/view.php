@@ -46,7 +46,7 @@ else {
                                             </form>
                                         <?php   };?>
         <form action="view.php?id=<?php echo $_GET['id']?>" method="post">
-        <button type="submit" name="upt">update</button>
+        
 
 
 
@@ -84,10 +84,7 @@ else {
 
 
             }
-            if(isset($_POST['upt']))
-            {
-                echo "table updated";
-            }
+           
             ?>
 
    <?php

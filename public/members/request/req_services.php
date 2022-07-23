@@ -1,5 +1,8 @@
 <?php include("../../../private/shared/init.php");?>
-<?php include(_shared."/header.php");?>
+<?php include(_shared."/header.php");
+ $date = new DateTime();
+ $now = date('Y-m-d ', $date->getTimestamp());
+?>
 
         <!-- content of request -->
 <div class="content" style="backgroundcolor:green">
@@ -63,7 +66,36 @@
 
             <!-- confession father request form -->
         <div id="conf">
+<?php
+ $sql5="SELECT * FROM `clergy_father` WHERE `m_id`='$_SESSION[id]'";
 
+ $result5 = $DBC->query($sql5);
+ if($result5){
+     $x=$result5->fetch_assoc();
+     if($x!=NULL){
+        $sql6 = "SELECT * FROM `members` WHERE `id`=$x[c_id]";
+        $result6=$DBC->query($sql6);
+        
+        if($result6){
+            $y = $result6->fetch_assoc();
+     echo "<span style='color:white'>you have been assigned to name :</span>".$y['name']."</br>";
+     echo "address: ".$y['address']."</br>";
+     echo "phone number: ".$y['phone'];
+        }
+     
+     }
+     else{
+?>
+            <form action="req_services.php" method="post">
+                <lable>adddress</label><br/>
+                    <input type="text" name="addr"><br/> </hr>
+                
+                <lable>reason</label><br/>
+                    <input type="text" name="rsn"><br/> </hr>
+                    <input type="submit" value="send request" name="sb4">
+
+            </form>
+            <?php }}?>
         </div>
 
         <!-- tabs simulation -->
@@ -173,6 +205,25 @@
         //$_SESSION['user'] = " boom this is";
     }
 
+    // confession father request
+
+    if(isset($_POST['sb4']))
+    {
+      
+        $sql = "INSERT INTO `request` ( `user_id`, `request_type`,`address`, `reason`,`date`) 
+                            VALUES ('$_SESSION[id]', 'confession father','$_POST[addr]', '$_POST[rsn]','$now');";
+        $result =$DBC->query($sql);
+
+            if($result)
+                {
+                echo "added succesfully"; 
+                }
+            else
+                {
+                echo "error: ".$DBC->error;
+                } 
+        //$_SESSION['user'] = " boom this is";
+    }
 
 ?>
     
