@@ -1,11 +1,27 @@
 <?php require_once("../private/shared/database.php");?>
-<?php $title="registration page";
+<?php session_start();?>
+<?php $title="registration";
 $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='profile rect'>";
-include("header.php");
+
 ?>
-    <div class="c2 cent">
+  
+<!-- login form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title;?></title>
+    <link rel="stylesheet" href="style/style.css">     
+</head>
+<body> 
+    <div class="container c2">
+ 
+        
+        <form action="setpass.php" method="post">
         <h1>create account</h1>
-        <form action="req_membership.php" method="post">
+        <div class="row">
                 <dl>
                     <dt><label for="u_name">name</label></dt>
                         <dd><input type="text" name="u_name" id=""></dd>
@@ -14,15 +30,7 @@ include("header.php");
                     <dt><label for="age">age</label></dt>
                        <dd> <input type="number" name="age" id=""></dd>
                 </dl>
-                <dl>
-                    <dt>gender</dt>
-                        <dd>
-                            <label for="gender">male</label>
-                                <input type="radio" name="gender" value="0">
-                            <label for="gender">female</label>
-                                <input type="radio" name="gender" value="1">
-                        </dd>        
-                </dl>
+             
                
                 <dl>
                     <dt> <label for="phone_addr">phone</label></dt>
@@ -33,6 +41,15 @@ include("header.php");
                         <dd><input type="email" name="email_addr" id=""></dd>
                 </dl>
                 <dl>
+                <dl>
+                    <dt>gender</dt>
+                        <dd>
+                            <label for="gender">male</label>
+                                <input type="radio" name="gender" value="0">
+                            <label for="gender">female</label>
+                                <input type="radio" name="gender" value="1">
+                        </dd>        
+                </dl>
                     <dt>clerical position</dt>
                         <dd>
                             <select name="position" id="">
@@ -54,26 +71,16 @@ include("header.php");
                                 <input type="radio" name="martial" value="2">
                         </dd>        
                 </dl>
-                <div id="operation"> 
-                    <input type="submit" value="create" name="sb">
+                <div id="operation" class="button"> 
+                  <input type="submit" value="create" name="sb" class="btn"/>
                 </div>
-        </form>   
+            </div>
+        </form>  
+        <div class="button">  <h4>already has an account <a href="login.php">login</a> </h4> </div>
+      
 </div>
-<?php 
-if(isset($_POST['sb']))
-{
-    $sql = " INSERT INTO 
-    members(`name`,`christ_name`,`age`,`gender`,`phone`,`address`,`email`,`martial_stat`,`clerical_pos`,`password`,`status`)
-     VALUES('$_POST[u_name]','$_POST[c_name]','$_POST[age]','$_POST[gender]','$_POST[phone_addr]','$_POST[home_addr]','$_POST[email_addr]','$_POST[martial]','$_POST[position]','123',0)";
-    if($DBC->query($sql))
-{
-    echo " data added succesfully ";
-}
-else{
-    echo "error: ".$DBC->error;
-} 
-    
-}
-?>
+</body>
+</html>
+
 
  <?php include("footer.php");?>

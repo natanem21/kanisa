@@ -2,11 +2,11 @@
 <?php include(_private."/admin_share/header.php");
 
   
-$sql = "SELECT * FROM `request` WHERE `request_type`='confession father'";
-$sql = "SELECT `Request_id`,`id`,`name`,`date`,`request_type` FROM `members` JOIN `request` ON `user_id`=`id`  WHERE `request_type`='confession father'";
+$sql = "SELECT * FROM `request` WHERE `request_type`='memorial'";
+$sql = "SELECT `Request_id`,`id`,`name`,`date`,`request_type` FROM `members` JOIN `request` ON `user_id`=`id`  WHERE `request_type`='memorial'";
 $sql2 = "SELECT `c_id`,`name` FROM `members` JOIN `clergy` ON `c_id`=`id` WHERE `type`>1";
 if(isset($_GET['id'])){
-$sql3 = "SELECT `id`,`name`,`date`,`request_type` FROM `members` JOIN `request` ON `user_id`=`id`  WHERE `request_type`='confession father' and `id`='$_GET[id] limit 1'";
+$sql3 = "SELECT `id`,`name`,`date`,`request_type` FROM `members` JOIN `request` ON `user_id`=`id`  WHERE `request_type`='memorial' and `id`='$_GET[id] limit 1'";
 $result3=$DBC->query($sql3);
 }
 $result = $DBC->query($sql);
@@ -37,23 +37,8 @@ $result2=$DBC->query($sql2);
                 
             
             }
-            $sql5="SELECT *FROM `clergy_father` WHERE `m_id`='$_GET[id]'";
-           
-            $result5 = $DBC->query($sql5);
-           
-            if($result5){
-                $x=$result5->fetch_assoc();
-                if($x!=NULL){
-                    $sql7 = "SELECT `name` FROM `members` WHERE `id`='$x[c_id]'";
-                    $result7 = $DBC->query($sql7);
-                    $y=$result7->fetch_assoc();
-                echo "<span style='color:red'>has been assigned to name :</span>".$y['name']."</br>";
-               
-                }
-                else{
-
-                }
-            }
+          
+            
                 ?>
     
     </div>
@@ -104,8 +89,8 @@ $result2=$DBC->query($sql2);
                             <?php echo $x['date']?>
                         </td>
                         <td>
-                            <a href="assgnConf.php?id=<?php  echo $x['id'];?>&uc=1">assign</a>
-                            <a href="assgnConf.php?id=<?php  echo $x['id'];?>&uc=2&rid=<?php  echo $x['Request_id'];?>">delete</a>
+                            <a href="memorial.php?id=<?php  echo $x['id'];?>&uc=1">accept</a>
+                            <a href="memorial.php?id=<?php  echo $x['id'];?>&uc=2&rid=<?php  echo $x['Request_id'];?>">delete</a>
                             
                         </td>
                     
@@ -257,7 +242,7 @@ if(isset($_GET['uc']))
         $result8 = $DBC->query($sql8);
         if($result8){
             echo "this has  been deleted from request";
-            header("location:assgnConf.php");
+            header("location:memorial.php");
         }
     }
 }

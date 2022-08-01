@@ -16,14 +16,15 @@
     </div>
     <div class="outer">    
         <div class="o">
-           <ul> request
-                <div class="i">
+           <ul> <a href="<?php echo WWW_ROOT.'public/members/request/req_services.php';?>" class="">request</a>
+           <!-- commented because included in one -->    
+           <!-- <div class="i">
                     <li><a href="<?php echo WWW_ROOT.'public/members/request/req_services.php'?>" class="">service</a></li>
                     <li><a href="<?php echo WWW_ROOT.'public/members/request/req_father.php';?>" class="">confession father</a></li>
                     <li><a href="<?php echo WWW_ROOT.'public/members/request/req_leaving.php';?>" class="">leaving request</a></li>  
                     
                     
-                </div>
+                </div> -->
             </ul>
         </div>
         

@@ -2,21 +2,47 @@
 <?php session_start();?>
 <?php $title="login page";
 $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='profile rect'>";
-include("header.php");
+
 ?>
-
+  <link rel="stylesheet" href="style/style.css">
 <!-- login form -->
-
-<div class="c2">
-    <h1>login page</h1>
-    <form action="login.php" method="post" >
-      <label for="un">user name </label> 
-         <input type="text" name = "un"><br/><br/>
-      <label for="ps"> password </label>
-         <input type="password" name="ps"><br/>
-       <input type="submit" value="login" name="sb" style="background-color:green"><br/></br/>   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title;?></title>
+    <link rel="stylesheet"  href="style.css">      
+</head>
+<body>  
+<div class="background-img"></div>
+    
+    <div class="container">
+        <h2 class="welcome">WELCOME BACK</h2>
+        <hr>
+    <form action="login.php" method="post">
+        <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="USERNAME OR EMAIL" name="un">
+        </div>
+        <div class="row">
+            <i class="fas fa-key"></i>
+            <input type="password" placeholder="PASSWORD" name="ps">
+        </div>
+        <div class="forget">
+            <a href="#">FORGET PASSWORD?</a>    
+        </div>
+        
+        <div class="button">
+            <button type="submit" name="sb">LOGIN</button>
+        </div>
+        <div class="lastline">
+            <em>NOT A MEMBER ? </em>
+            <a href="req_membership.php">SIGN UP</a>
+        </div>
     </form>
- </div>
+    </div>
 
  <!-- password checking  -->
 

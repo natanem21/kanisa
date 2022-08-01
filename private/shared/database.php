@@ -81,14 +81,14 @@ $sql = "ALTER TABLE members ADD COLUMN `christ_name` varchar(20)  AFTER `name`;"
 
  */
 
- if($DBC->query($sql))
+/*  if($DBC->query($sql))
 {
    echo "created table";
 }
 else{
     echo "error: ".$DBC->error;
 }
-
+ */
 
 /*
 $sql = " INSERT INTO members(`name`,`password`) VALUES('estifanos','123')";

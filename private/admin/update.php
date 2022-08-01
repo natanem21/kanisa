@@ -15,7 +15,7 @@
         }
 </style>
 
-                                        <!-- this is basic information view -->
+                                    <!-- this is basic information view -->
 <div class="content">
 
             <!-- sql defination part  -->
@@ -50,12 +50,13 @@
                         <h3>name : <input type="text" name="nm" value="<?php  echo $x['name'];?>"/>
                         <h3>christian name : <input type="text" name="cn" value="<?php  echo $x['christ_name'];?>"/>
                         <h3>age : <input type="text" name="ag" value="<?php  echo $x['age'];?>"/>
-                        <h3>gendr :
+                        <h3>gender :
                                     <select name="gen">
                                         <option value="0" <?php if($x['gender']==0){?>
                                                                 selected="selected"<?php }?>>male</option>
                                         <option value="1"  <?php if($x['gender']==1){?>
                                                                 selected="selected"<?php }?>>female</option>
+                                                                
                                     </select>
 
                         <h3>martial status :<input type="text" name="ms" value="<?php   if($x['martial_stat']==0) {echo "single";} elseif ($x['martial_stat']==1) {echo "married";}else {echo "divorced";};?>"/>

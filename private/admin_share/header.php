@@ -42,7 +42,10 @@
                <ul> view
                     <div class="i">
                         <li><a href="<?php echo PRI_ROOT.'private/admin/assgnConf.php';?>" class="">confession father</a></li>
-                        
+                        <li><a href="<?php echo PRI_ROOT.'private/admin/holly_water_req.php';?>" class="">holy water</a></li>
+                        <li><a href="<?php echo PRI_ROOT.'private/admin/memorial.php';?>" class="">memorial</a></li>
+                        <li><a href="<?php echo PRI_ROOT.'private/admin/leaving.php';?>" class="">leaving</a></li>
+                      
                     </div>
                </ul>
              </div>

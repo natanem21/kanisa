@@ -174,12 +174,19 @@ nav{
 @media  only screen and (max-width:600px){
     .cent{
         align-items: center;
-        margin-left: 20vw;
+        margin-left: 0vw;
        background-color:aqua;
-        width: 25vw;
+        width:100vw;
         border-radius: 10px;
-        font-size:1vw;
+        
       
+     }
+     label{
+color:red;
+font-size: 1rem;
+     }
+     dt{
+        font-size: 1rem;
      }
 
 }
