@@ -1,5 +1,5 @@
 # gorgori
-<h1> this is the project i'm currently working on for my BSC class.</h1>
+<h1> this is the project we are currently working on for our BSC class.</h1>
 <h2>entitled with church information managment system for ethiopian orthodox tewahido church</h2>
 <hr>
 <h2>if you want to install this system</h2>
