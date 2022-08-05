@@ -11,8 +11,12 @@
 <body>
     <header>
     <div class="profile_img">
+        <?php  $sql = "SELECT `img` FROM `members` WHERE `id`='$_SESSION[id]'";
+                $r = $DBC->query($sql);
+                $n = $r->fetch_assoc();
+              ?>
         <p>well come <?php   echo $_SESSION['user'];?></p>
-        <img src="<?php echo WWW_ROOT.'private/shared/loginavatar.png'?>" alt="profile image" class="profile">
+        <img src="<?php echo WWW_ROOT.'guest/myFiles/'.$n['img']?>" alt="profile image" class="profile">
     </div>
     <div class="outer">    
         <div class="o">

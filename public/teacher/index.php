@@ -7,6 +7,12 @@
     <title>teachers page</title>
 </head>
 <body>
+<?php
+if($_SESSION['role']!=4)
+{
+    header("location:"."/chms_for_eotc/guest/login.php");
+}
+?>
     <h1>
         this is teachers page
     </h1>

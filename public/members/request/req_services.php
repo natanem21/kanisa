@@ -7,7 +7,7 @@
         <!-- content of request -->
             <div class="content" style="backgroundcolor:green">
             <p>the problem is when the input is taken to the database special keys interpreted different ways like '</p>
-                <h1 style="background-color:green">service request</h1>
+                <h1 style="background-color:#7f34">request service</h1>
 
         <!-- tabs  -->
             <div style="background-color:#6666">

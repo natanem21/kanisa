@@ -8,6 +8,12 @@
     <link rel="stylesheet"  href="<?php echo PRI_ROOT.'private/admin_share/admin.css'?>">      
 
 </head>
+<?php
+if($_SESSION['role']!=1)
+{
+    header("location:"."/chms_for_eotc/guest/login.php");
+}
+?>
 <body>
     <header>
     <div class="profile_img">
@@ -49,6 +55,10 @@
 
                     </div>
                </ul>
+               
              </div>
+             <ul>
+            <li><a href="<?php echo PRI_ROOT.'private/shared/logout.php';?>" class="">logout</a></li>
+        </ul>
     </div>
     </header>

@@ -140,7 +140,7 @@ hr{
 .container a:hover{
     background-color: whitesmoke;
     color: tomato;
-    
+    border-color: whitesmoke;
     transition: ease-in;
 }
 
@@ -157,6 +157,7 @@ hr{
 }
 .container .lastline a:hover{
     color: tomato;
+    border-color: whitesmoke;
 }
 @media  only screen and (max-width:600px){
     .container{

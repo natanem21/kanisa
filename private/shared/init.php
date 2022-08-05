@@ -24,11 +24,13 @@ function is_post_req()
     return $_SERVER['REQUEST_METHOD']=='POST';
 }
 
+
 if(!isset($_SESSION['user']))
 {
     header("location:"."/chms_for_eotc/guest/login.php");
 }
-else{
+else
+{
   
 }
 

@@ -20,16 +20,13 @@ include("header.php");
         </div>
 
         <div class="go_left">
-            <h1>books</h1>
+            <h1 style="background-color:red"><center>books</center></h1>
             <button>book</button>
         </div>
     </div>
 
     <div class="cm">
-        <h1>this is first</h1>
-        <h1>this is first</h1>
-        <h1>this is first</h1>
-        <h1>this is first</h1>
+      
         <!-- reserved for futute use -->
     </div>
 

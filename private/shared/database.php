@@ -57,13 +57,23 @@ $sql = " CREATE TABLE IF NOT exists members(
          FOREIGN KEY(`c_id`) REFERENCES members(`id`)
 
          ); "; */
-         $sql = " CREATE TABLE IF NOT exists clergy_father( 
+         $sql = " CREATE TABLE IF NOT exists certificate( 
+            `cert_id` INT(10) NOT NULL primary key,
+            `mem_id` INT(10) NOT NULL,
+            `given by` varchar(20) NOT NULL ,
+           `given date` date,
+            `place` varchar(255),
+            `type` varchar(20),
+           FOREIGN KEY(`mem_id`) REFERENCES members(`id`)
+    
+             ); ";
+      /*    $sql = " CREATE TABLE IF NOT exists clergy_father( 
             `c_id` INT(10) NOT NULL,
             `m_id` INT(10) NOT NULL,
              FOREIGN KEY(`c_id`) REFERENCES clergy(`c_id`),
              FOREIGN KEY(`m_id`) REFERENCES members(`id`)
     
-             ); ";
+             ); "; */
 /*
 
 //this has been added to modify the first table to hokd more information
@@ -80,16 +90,16 @@ $sql = "ALTER TABLE members ADD COLUMN `christ_name` varchar(20)  AFTER `name`;"
  $sql = "ALTER TABLE members ADD COLUMN `status` TINYINT ;";
 
  */
-
-/*  if($DBC->query($sql))
+/* 
+ if($DBC->query($sql))
 {
    echo "created table";
 }
 else{
     echo "error: ".$DBC->error;
 }
- */
 
+ */
 /*
 $sql = " INSERT INTO members(`name`,`password`) VALUES('estifanos','123')";
 if($DBC->query($sql))
