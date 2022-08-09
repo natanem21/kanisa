@@ -44,27 +44,46 @@ else
         
 ?>
 
-            <div id="bap">
-                <form action="req_services.php" method="post">
-                <lable>name of the person to be baptised</label><br/>
-                <input type="text" name="nm"><br/>
-                <lable>sex</label><br/>
-                <input type="text" name="sx"><br/>
+            <div id="bap" class="tb">
+                <div class="tr">
+                    <h3 class="td">name of the person to be baptised</h3>
+                    <input type="text" name="nm" class="td">
+                </div>
+                <div class="tr">
+                    <h3 class="td">data of birth</h3>
+                    <input type="text" name="dob" class="td">
+                </div>
+                <div class="tr">
+                    <h3 class="td">place of birth</h3>
+                    <input type="text" name="pob" class="td">
+                </div>
+                <div class="tr">
+                    <h3 class="td">fathers name</h3>
+                    <input type="text" name="fm" class="td">
+                </div>
+                <div class="tr">
+                    <h3 class="td">sex</h3>
+                    <input type="text" name="sx" class="td">
+                </div>
+                <div class="tr">
+                    
+                    <h3 class="td">mothers name</h3>
+                    <input type="text" name="mm" class="td">
+                </div>
 
-                <label>data of birth</label><br/>
-                <input type="text" name="dob"><br/>
-                <lable>place of birth</label><br/>
-                <input type="text" name="pob"><br/>
-                <lable>fathers name</label><br/>
-                <input type="text" name="fm"><br/>
-                <lable>mothers name</label><br/>
-                <input type="text" name="mm"><br/>
-                <lable>God father or mother name</label><br/>
-                <input type="text" name="Gfm"><br/>
-                <lable>reason</label><br/>
-                <input type="text" name="rm"><br/> </hr>
-                <input type="submit" value="send request" name="sb1">
-                </form> 
+                <div class="tr">
+                    
+                    <h3 class="td">God father or mother name</h3>
+                    <input type="text" name="Gfm" class="td">
+                </div>
+                <div class="tr">
+                <h3 class="td">reason</h3>
+                <input class="td" type="text" name="rm">
+                </div>
+              
+                </hr>
+                <input type="submit" value="send request" name="sb1" class="td">
+                
             </div>
 <?php
 }}

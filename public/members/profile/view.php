@@ -6,61 +6,89 @@ $result =$DBC->query($sql); //members table
 $x = $result->fetch_assoc();
 ?>
 <div class="content">
- 
-    <div class="tb">
-        <h2 class="tr">profile datail </h2>
-        <div class="tr">
-            <h3 class="td">first name : </h3>
-            <input type="text" name="name" id="name" class="td" value="<?php  echo $x['name'];?>">
+    <form action="view.php" method="post">
+        <div class="tb">
+            <h2 class="tr">profile datail </h2>
+            <div class="tr">
+                <h3 class="td">first name : </h3>
+                <input type="text" name="name" id="name" class="td" value="<?php  echo $x['name'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">last name : </h3>
+                <input type="text" name="lname" id="lname" class="td" value="<?php  echo $x['last_name'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">password</h3>
+                <input type="password" name="pswd" id="pswd" class="td" value="<?php  echo $x['password'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">christ name</h3>
+                <input type="text" name="c_name" id="c_name" class="td" value="<?php  echo $x['christ_name'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">date of birth</h3>
+                <input type="date" name="DOB" id="DOB" class="td" value="<?php  echo $x['age'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">phone number</h3>
+                <input type="tel" name="phone" id="phone" class="td"  value="<?php  echo $x['phone'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">email</h3>
+                <input type="email" name="email" id="email" class="td" value="<?php  echo $x['email'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">home address</h3>
+                <input type="text" name="addr" id="addr" class="td" value="<?php  echo $x['address'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">gender</h3>
+                    <select class="td" name="gen">
+                        <option value="0" <?php if($x['gender']==0){?>
+                                                selected="selected"<?php }?>>male</option>
+                        <option value="1"  <?php if($x['gender']==1){?> selected="selected"<?php }?>>female</option>
+                    </select>
+            </div>
+            <div class="tr">
+                <h3  class="td">martial status :</h3>
+                <input class="td" type="text" name="ms" value="<?php   if($x['martial_stat']==0) {echo "single";} elseif ($x['martial_stat']==1) {echo "married";}else {echo "divorced";};?>"/>
+            </div>
+            <div class="tr">
+                <h3 class="td">job</h3>
+                <input type="text" name="job" id="job" class="td">
+            </div>
+            <div class="tr">
+                <h3 class="td">position filled : </h3>
+                <select name="cl_pos" id="cler_pos" class="td">
+                    <option value="1" <?php  if($x['clerical_pos']==1) {  ?>selected <?php } ?>>non clergy</option>
+                    <option value="2"<?php  if($x['clerical_pos']==2) { ?> selected <?php } ?>>deacon</option>
+                    <option value="3"<?php  if($x['clerical_pos']==3) { ?>selected<?php } ?>>priest</option>
+                    <option value="4"<?php  if($x['clerical_pos']==4) { ?>selected<?php } ?>>monk</option>
+                </select> 
+            <input type="submit" value="edit" class="td" name="edit">
+                        
         </div>
-        <div class="tr">
-            <h3 class="td">last name : </h3>
-            <input type="text" name="lname" id="lname" class="td" value="<?php  echo $x['last_name'];?>">
-        </div>
-        <div class="tr">
-            <h3 class="td">christ name</h3>
-            <input type="text" name="c_name" id="c_name" class="td" value="<?php  echo $x['christ_name'];?>">
-        </div>
-        <div class="tr">
-            <h3 class="td">date of birth</h3>
-            <input type="date" name="DOB" id="DOB" class="td" value="<?php  echo $x['age'];?>">
-        </div>
-        <div class="tr">
-            <h3 class="td">phone number</h3>
-            <input type="tel" name="phone" id="phone" class="td"  value="<?php  echo $x['phone'];?>">
-        </div>
-        <div class="tr">
-            <h3 class="td">email</h3>
-            <input type="email" name="email" id="email" class="td" value="<?php  echo $x['email'];?>">
-        </div>
-        <div class="tr">
-            <h3 class="td">home address</h3>
-            <input type="text" name="addr" id="addr" class="td" value="<?php  echo $x['address'];?>">
-        </div>
-        <div class="tr">
-            <h3 class="td">gender</h3>
-                <select class="td" name="gen">
-                    <option value="0" <?php if($x['gender']==0){?>
-                                            selected="selected"<?php }?>>male</option>
-                    <option value="1"  <?php if($x['gender']==1){?> selected="selected"<?php }?>>female</option>
-                 </select>
-        </div>
-        <div class="tr">
-             <h3  class="td">martial status :</h3>
-             <input class="td" type="text" name="ms" value="<?php   if($x['martial_stat']==0) {echo "single";} elseif ($x['martial_stat']==1) {echo "married";}else {echo "divorced";};?>"/>
-        </div>
-        <div class="tr">
-            <h3 class="td">position filled : </h3>
-            <input type="text" class="td" value="<?php   if($x['clerical_pos']==1) 
-                                                            { echo 'non-clergy'; } 
-                                                        elseif ($x['clerical_pos']==2) 
-                                                            {echo 'deacon';}
-                                                        elseif ($x['clerical_pos']==3)
-                                                            {echo 'priest';} 
-                                                        else 
-                                                            {echo 'monk';}?>">
-        </div>
-                      
-    </div>
+    </form>
 </div>
+<?php
+if(isset($_POST["edit"]))
+{
+    $sql="UPDATE `members` SET  `name`='$_POST[name]',
+                                `last_name`='$_POST[lname]',
+                                `christ_name`='$_POST[c_name]',
+                               
+                                `clerical_pos`='$_POST[cl_pos]',
+                                `age`='$_POST[DOB]',
+                                `password` = '$_POST[pswd]',
+                                `gender`='$_POST[gen]',
+                                `phone`='$_POST[phone]',
+                                `address`='$_POST[addr]',
+                                `email`='$_POST[email]',
+                                `martial_stat`='$_POST[ms]',
+                                `job`='$_POST[job]'
+                                 WHERE `id`='$_SESSION[id]'";
+    $DBC->query($sql);
+    header("location:view.php");
+}
+?>
 <?php include(_shared."/footer.php");?>

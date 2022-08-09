@@ -4,7 +4,7 @@
   
 $sql = "SELECT * FROM `request` WHERE `request_type`='confession father'";
 $sql = "SELECT `Request_id`,`id`,`name`,`date`,`request_type` FROM `members` JOIN `request` ON `user_id`=`id`  WHERE `request_type`='confession father'";
-$sql2 = "SELECT `c_id`,`name` FROM `members` JOIN `clergy` ON `c_id`=`id` WHERE `type`>1";
+$sql2 = "SELECT `c_id`,`name` FROM `members` JOIN `clergy` ON `c_id`=`members`.`id` WHERE `type`>1";
 if(isset($_GET['id'])){
 $sql3 = "SELECT `id`,`name`,`date`,`request_type` FROM `members` JOIN `request` ON `user_id`=`id`  WHERE `request_type`='confession father' and `id`='$_GET[id] limit 1'";
 $result3=$DBC->query($sql3);

@@ -34,36 +34,59 @@
             </div>
 
         <!-- baptism  request  by creating object from class -->
+        <form action="req_services.php" method="post">
             <?php 
+           
                 $baptism = new Baptism();
                 $baptism->Values();
             ?>
+        </form>
         <!-- memorial request form -->
-            <div id="mem">
+            <div id="mem" class="tb">
                 <form action="req_services.php" method="post">
-                <lable>name of the person to be memorized</label><br/>
-                <input type="text" name="nm"><br/> </hr>
-                <lable>christ name of the person</label><br/>
-                <input type="text" name="cm"><br/> </hr>
-                <lable>date of memorial</label><br/>
-                <input type="text" name="dm"><br/> </hr>
-                <lable>adddress</label><br/>
-                <input type="text" name="addr"><br/> </hr>
-                <input type="submit" value="send request" name="sb2">
+                    <div class="tr">
+                    <h3 class="td">name of the person to be memorized</h3>
+                    <input class="td" type="text" name="nm"> </hr>
+                    </div>
+                    <div class="tr">
+                    <h3 class="td">christ name of the person</h3>
+                    <input class="td" type="text" name="cm"> </hr>
+                    </div>
+                    <div class="tr">
+                    <h3 class="td">date of memorial</h3>
+                    <input class="td" type="text" name="dm"> 
+                    </div>
+                    <div class="tr">
+                    <h3 class="td">adddress</h3>
+                    <input class="td" type="text" name="addr">
+                    </div>
+                    <div class="tr"></div>
+                    <div class="tr"></div>
+                    
+                    
+                    <input class="td" type="submit" value="send request" name="sb2" class="td">
                 </form>
             </div>
 
         <!-- holy water request form -->
-            <div id="hw">
+            <div id="hw" class="tb">
                 <form action="req_services.php" method="post">
-                    <lable>adddress</label><br/>
-                        <input type="text" name="addr"><br/> </hr>
-                    <lable>date</label><br/>
-                        <input type="text" name="dt"><br/> </hr> 
+                    <div class="tr">
+                        <h3 class="td">adddress</h3>
+                        <input class="td" type="text" name="addr">
+                    </div>
+                    <div class="tr">
+                        <h3 class="td">date</h3>
+                        <input class="td" type="text" name="dt">
+                    </div>
+                    <div class="tr">
+                        <h3 class="td">reason</h3>
+                        <input class="td" type="text" name="rsn">
+                    </div>
                     
-                    <lable>reason</label><br/>
-                        <input type="text" name="rsn"><br/> </hr>
-                        <input type="submit" value="send request" name="sb3">
+                    
+                     
+                        <input class="td" type="submit" value="send request" name="sb3">
                 </form>
             </div>
 
@@ -91,12 +114,16 @@
                         else{
                     ?>
                     <form action="req_services.php" method="post">
-                        <lable>adddress</label><br/>
-                            <input type="text" name="addr"><br/> </hr>
+                        <div class="tr">
+                            <h3 class="td">adddress</h3>
+                            <input class="td" type="text" name="addr">
+                        </div>
+                        <div class="tr">
+                            <h3 class="td">reason</h3>
+                            <input class="td" type="text" name="rsn">
+                        </div>
                         
-                        <lable>reason</label><br/>
-                            <input type="text" name="rsn"><br/> </hr>
-                            <input type="submit" value="send request" name="sb4">
+                            <input class="td" type="submit" value="send request" name="sb4">
 
                     </form>
                     <?php }}?>
@@ -104,10 +131,10 @@
         <!-- leaving request request form --> 
                 <div id="leav">
                         <form action="req_services.php" method="get">
-                            where are you leaving: <input type="text" name="ptg"></br>
-                            reason you are leaving: <input type="textarea" name="rol"></br>
-                            time you leave : <input type="date" name="lt" ></br> 
-                            <input type="submit" value="submit" name="sb9">
+                            <div class="tr"><h3 class="td"> where are you leaving: </h3><input class="td" type="text" name="ptg"></div>
+                            <div class="tr"> <h3 class="td">reason you are leaving: </h3><input class="td" type="textarea" name="rol"></div>
+                            <div class="tr"> <h3 class="td">time you leave : </h3> <input class="td" type="date" name="lt" ></div>
+                            <input class="td" type="submit" value="submit" name="sb9">
                         </form>
                 </div>
         <!-- tabs simulation -->
