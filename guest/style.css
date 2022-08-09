@@ -95,6 +95,7 @@ nav a:link{
     width: 85vw;
     height: 75vh;
     float: right;
+    bottom: 20px;
 }
 .cent{
    align-items: center;
@@ -103,6 +104,42 @@ nav a:link{
    width: 25vw;
    border-radius: 10px;
    font-size:1vw;
+ 
+}
+.post
+{
+    background-color:antiquewhite;
+    position:relative;
+    margin-top: 10px;
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-content: stretch;
+    align-items: stretch;
+}
+.post h2
+{
+    color:brown;
+
+}
+.post .p_img
+{
+    width: 490px;
+    height: 320px;
+    border-radius: 30px;
+    position:relative;  
+    display:inline-block;
+    box-shadow: inset 2px 2px 2px 2px rgb(110, 68, 48);
+   
+}
+
+.post  .p_cont
+{
+    
+    display: table-cell;
  
 }
 /* ========================

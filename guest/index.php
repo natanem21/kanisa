@@ -21,6 +21,10 @@ include("header.php");
 
         <div class="go_left">
             <h1 style="background-color:red"><center>books</center></h1>
+            <a href="http://" target="_blank" rel="noopener noreferrer">book 1</a></br>
+            <a href="http://" target="_blank" rel="noopener noreferrer">book 2</a></br>
+            <a href="http://" target="_blank" rel="noopener noreferrer">book 3</a></br>
+            <a href="http://" target="_blank" rel="noopener noreferrer">book 4</a></br>
             <button>book</button>
         </div>
     </div>

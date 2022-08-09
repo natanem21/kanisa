@@ -13,9 +13,12 @@
         height: 25px;
         width: 100vw;
         bottom: 0px;
-        position:absolute;
+        position:fixed;
         background-color:rgb(9, 210, 236);
         }
+        img.td.profile {
+    border-radius: 30px;
+}
     </style>
 
 <!-- this is basic information view -->
@@ -71,51 +74,68 @@
                                                                 
                                     </select>
                                     </div>
-                        <div class="tr"> <h3  class="td">martial status :</h3><input class="td" type="text" name="ms" value="<?php   if($x['martial_stat']==0) {echo "single";} elseif ($x['martial_stat']==1) {echo "married";}else {echo "divorced";};?>"/></div>
-                        <div class="tr">  <h3  class="td">position :</h3> 
-                                <SELECT class="td" name="pos">
-                                    <option value="0"  <?php  if($y==NULL){?>selected="selected"<?php }?>>non clergy</option>
-                                    <option value="1" <?php if($y !=NULL){ if($y['type']==1){?>selected="selected"<?php }}?> >deacon</option>
-                                    <option value="2" <?php  if($y !=NULL){if($y['type']==2){?> selected="selected"<?php }}?> >priest</option>
-                                    <option value="3" <?php if($y !=NULL){ if($y['type']==3){?>selected="selected"<?php }}?>>monk</option>
-                                </SELECT></div>
-                                            <?php
-                            if(isset($y['type']))
-                            {
-                                    if($y['type']>0)
-                                    {
-                                        echo "<a href='update.php?id=".$x['id']."&uc=1'>------clergies information----</a>";
-                    
-                                    }
-                                    
-                                    /* 
-                                        to depromote a clergy to member first check if there are assocoiated confession childrens 
-                                        delete from clergy to members relation
-                                        then delete from clergies table
-                                    */
+                       <div class="tr"> <h3  class="td">martial status :</h3><input class="td" type="text" name="ms" value="<?php   if($x['martial_stat']==0) {echo "single";} elseif ($x['martial_stat']==1) {echo "married";}else {echo "divorced";};?>"/></div>
+                       <div class="tr"><h3 class="td">position filled : </h3><span class="td"><?php   if($x['clerical_pos']==1) {echo "non-clergy";} elseif ($x['clerical_pos']==2) {echo "deacon";}elseif ($x['clerical_pos']==3) {echo "priest";}else {echo "monk";};?></span></div>
+                       <div class="tr">  <h3  class="td">position in current church :</h3> 
+                                                                                        <SELECT class="td" name="pos">
+                                                                                            <option value="0"  <?php  if($y==NULL){?>selected="selected"<?php }?>>non clergy</option>
+                                                                                            <option value="1" <?php if($y !=NULL){ if($y['type']==1){?>selected="selected"<?php }}?> >deacon</option>
+                                                                                            <option value="2" <?php  if($y !=NULL){if($y['type']==2){?> selected="selected"<?php }}?> >priest</option>
+                                                                                            <option value="3" <?php if($y !=NULL){ if($y['type']==3){?>selected="selected"<?php }}?>>monk</option>
+                                                                                        </SELECT></div>
+                                                                                                        <?php
+                                                                                        if(isset($y['type']))
+                                                                                        {
+                                                                                                if($y['type']>0)
+                                                                                                {
+                                                                                                    echo "<a href='update.php?id=".$x['id']."&uc=1'>------clergies information----</a>";
+                                                                                
+                                                                                                }
+                                                                                                
+                                                                                                /* 
+                                                                                                    to depromote a clergy to member first check if there are assocoiated confession childrens 
+                                                                                                    delete from clergy to members relation
+                                                                                                    then delete from clergies table
+                                                                                                */
 
-                                    if($y['type']==0)   
-                                    {
-                                        $sql8="SELECT * FROM `clergy_father` WHERE `c_id` = $_GET[id]"; //checking if there are confession children
-                                        $result4=$DBC->query($sql8);
-                                        if($result4)
-                                        {
-                                            while($x=$result4->fetch_assoc())
-                                            {
-                                                $sql9 = "DELETE FROM `clergy_father` WHERE `c_id`=$_GET[id]"; 
-                                                $result5 = $DBC->query($sql9);
-                                            }  
-                                        }
-                                        
-                                        $sql7 = "DELETE FROM `clergy` WHERE `c_id`=$_GET[id]";
-                                        $result3 = $DBC->query($sql7);
-                                    }
-                                    
-                            }
-                            ?>
-                            <h3>account status :    <?php   if($x['status']==0)  { echo "deactivated  ";?><form action="view.php?id=<?php echo $_GET['id']?>" method="post"><button type="submit" name="act">activate</button> </form><?php  }
+                                                                                                if($y['type']==0)   
+                                                                                                {
+                                                                                                    $sql8="SELECT * FROM `clergy_father` WHERE `c_id` = $_GET[id]"; //checking if there are confession children
+                                                                                                    $result4=$DBC->query($sql8);
+                                                                                                    if($result4)
+                                                                                                    {
+                                                                                                        while($x=$result4->fetch_assoc())
+                                                                                                        {
+                                                                                                            $sql9 = "DELETE FROM `clergy_father` WHERE `c_id`=$_GET[id]"; 
+                                                                                                            $result5 = $DBC->query($sql9);
+                                                                                                        }  
+                                                                                                    }
+                                                                                                    
+                                                                                                    $sql7 = "DELETE FROM `clergy` WHERE `c_id`=$_GET[id]";
+                                                                                                    $result3 = $DBC->query($sql7);
+                                                                                                }
+                                                                                                
+                                                                                        }
+                                                                                        ?>
+                       <div class="tr"><h3 class="td">certificates : </h3>
+                                                                        <?php $sql10="SELECT * FROM `certificate` WHERE  `mem_id`='$x[id]'";
+                                                                        $result6 = $DBC->query($sql10);
+                                                                        while($cert = $result6->fetch_assoc())
+                                                                        {
+                                                                            ?>
+                                                                            <a href="/chms_for_eotc/guest/myFiles/<?php  echo $cert['img']; ?>"><img src="/chms_for_eotc/guest/myFiles/<?php  echo $cert['img']; ?>" alt="img" class="td profile"></a>
+
+                                                                            <?php
+
+                                                                        }
+                                                                            ?>
+                    
+                        </div>
+                       <h3>account status :    <?php   if($x['status']==0)  { echo "deactivated  ";?><form action="view.php?id=<?php echo $_GET['id']?>" method="post"><button type="submit" name="act">activate</button> </form><?php  }
                                                             else {echo "activated";?><form action="view.php?id=<?php echo $_GET['id']?>" method="post"><button type="submit" name="deact">deactivate</button> </form> <?php   };?>
-                        <input type="submit" name="sb">
+                       
+                    
+                       <input type="submit" name="sb">
                 
                     </form>
                             <?php

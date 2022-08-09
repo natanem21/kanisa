@@ -37,6 +37,7 @@ footer{
    display: table;
    position: relative;
    border-spacing: 4px;
+   
 }
 .tr{
    display: table-row;
@@ -46,6 +47,14 @@ footer{
    display: table-cell;
    border-color: rgb(14, 104, 143);
    border-radius: 10px;
+  
+   
+}
+.content h2 a
+{
+    text-decoration: none;
+    color:#aaa;
+    margin: 10px;
 }
 li{
     list-style: none;

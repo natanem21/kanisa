@@ -36,30 +36,93 @@ li{
 }
 
 .outer{
-    height: 25vh;
+    
     width: 75vw;
     align-items: center;
     
 }
 .content{
  
-    width: 100vw;
-    background-color: #aaa;
-    border: 0px;
-    
     position:relative;
+    width: 100vw;
+ 
+    background-color: antiquewhite;
+    margin-bottom: 30px;
+  border-radius: 10px;
+    border: 1px dashed rgb(9, 210, 236);
 }
 footer{
     height: 25px;
     width: 100vw;
     bottom: 0px;
-    position:relative;
+    position:fixed;
     background-color:aqua;
+    margin-top: 20px;
 }
 header{
-    height: 20vh;
-    background-color: antiquewhite;
+    position: relative;
+    background-color: rgb(159, 221, 221);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    z-index: 1;
 }
+
+.post
+{
+    background-color:bisque;
+    position:relative;
+    margin-top: 10px;
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    align-content: stretch;
+    align-items: stretch;
+    box-shadow: 2px 2px 2px 2px rgb(181, 73, 22);
+}
+.post h2
+{
+    color:brown;
+
+}
+.post .p_img
+{
+    width: 490px;
+    height: 320px;
+    border-radius: 30px;
+    position:relative;  
+    display:inline-block;
+    box-shadow: inset 2px 2px 2px 2px rgb(110, 68, 48);
+   
+}
+
+.post  .p_cont
+{
+    
+    display: table-cell;
+ 
+
+}
+.tb{
+    display: table;
+    position: relative;
+    border-spacing: 4px;
+    
+ }
+ .tr{
+    display: table-row;
+  
+ }
+ .td{
+    display: table-cell;
+    border-color: rgb(14, 104, 143);
+    border-radius: 10px;
+   
+    
+ }
 .i{
     display: none;
     position: absolute;

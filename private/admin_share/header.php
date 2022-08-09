@@ -27,13 +27,15 @@ if($_SESSION['role']!=2)
                                 <div class="i">
                                     <li><a href="<?php echo PRI_ROOT.'private/admin/comments.php'?>" class="">commets</a></li>
                                     <li><a href="<?php echo PRI_ROOT.'private/admin/employees.php';?>" class="">employees</a></li>
-                                     
-                                    
-                                </div>
+                                 </div>
                         </ul>
                     </div>
                     <ul>
                     <li><a href="<?php echo PRI_ROOT.'private/admin/members.php';?>" class="">members</a></li>  
+                                   
+                    </ul>
+                    <ul>
+                    <li><a href="<?php echo PRI_ROOT.'private/admin/group.php';?>" class="">groups</a></li>  
                                    
                     </ul>
                     

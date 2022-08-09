@@ -12,29 +12,35 @@ if(isset($_POST['sb']))
     
     $folderLocation = "myFiles"; 
     $name = basename($_FILES["prof_img"]["name"]);
-    for ($i=0; $i < $_POST["num_of_cert"]; $i++)
-    { 
-      $name.$i;
-      
+    for($x=0;$x<=$_POST["num_of_cert"];$x++)
+    {
+    $name2[]= basename($_FILES["certificate$x"]["name"]);
     }
-    $name2 = basename($_FILES["certificate1"]["name"]);
     // if the folder doesn't exist then make it
     if (!file_exists($folderLocation)) mkdir($folderLocation);
     // move the file into the folder
 
     move_uploaded_file($_FILES["prof_img"]["tmp_name"], "$folderLocation/" .$name);
-    move_uploaded_file($_FILES["certificate1"]["tmp_name"], "$folderLocation/" .$name2);
-      $sql = " INSERT INTO 
+    for($x=0;$x<=$_POST["num_of_cert"];$x++)
+    {
+    move_uploaded_file($_FILES["certificate$x"]["tmp_name"], "$folderLocation/" .$name2[$x]);
+  }
+    $sql = " INSERT INTO 
       members(`name`,`last_name`,`christ_name`,`img`,`age`,`gender`,`phone`,`address`,`email`,`martial_stat`,`clerical_pos`,`status`,`job`)
       VALUES('$_POST[u_name]','$_POST[l_name]','$_POST[c_name]','$name','$_POST[age]','$_POST[gender]','$_POST[phone_addr]','$_POST[home_addr]','$_POST[email_addr]','$_POST[martial]','$_POST[position]',0,'$_POST[job]')";
-    
+  
     
       if($DBC->query($sql))
       {
         global  $new_id;
         $new_id=mysqli_insert_id($DBC);
           echo " your id is ".$new_id;
-         
+                  for($x=0;$x<=$_POST["num_of_cert"];$x++)
+                    {
+                        $sql2 = "INSERT INTO `certificate`(`mem_id`,`img`)
+                                    VALUE('$new_id','$name2[$x]')";
+                        $ew=$DBC->query($sql2);
+                    }
       }
     else
       {

@@ -100,7 +100,7 @@ if(isset($_POST['sb']))
               {
                 ?>
                 <script>
-                  alert("dear user your application is on process please wait till you are approved")
+                  alert("dear user your application is on process please wait till you are approved");
                   </script>
                 <?php
                 

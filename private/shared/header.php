@@ -16,10 +16,13 @@
                 $n = $r->fetch_assoc();
               ?>
         <p>well come <?php   echo $_SESSION['user'];?></p>
-        <img src="<?php echo WWW_ROOT.'guest/myFiles/'.$n['img']?>" alt="profile image" class="profile">
+        <a href="<?php echo WWW_ROOT.'public/members/profile/view.php'?>"> <img src="<?php echo WWW_ROOT.'guest/myFiles/'.$n['img']?>" alt="profile image" class="profile"></a>
     </div>
     <div class="outer">    
         <div class="o">
+        <ul>
+            <li><a href="<?php echo WWW_ROOT.'public/members/index.php';?>" class="">home</a></li>
+        </ul>
            <ul> <a href="<?php echo WWW_ROOT.'public/members/request/req_services.php';?>" class="">request</a>
            <!-- commented because included in one -->    
            <!-- <div class="i">
@@ -41,7 +44,7 @@
         </ul>
 
         <ul>
-            <li><a href="<?php echo WWW_ROOT.'public/members/comment.php';?>" class="">comment</a></li>
+            <li><a href="<?php echo WWW_ROOT.'public/members/report.php';?>" class="">report</a></li>
         </ul>
 
              <div class="o1">

@@ -70,7 +70,7 @@ $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='pro
 
 <!-- form validation -->
 <script>
-   
+
     var number=0;
      function validate()
      {
@@ -88,13 +88,14 @@ $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='pro
     function add()
     {
       
-      number++;
+     
       document.getElementById("cer_no").value=number;
+      
         var element = document.createElement("input");
         element.type="file";
         element.name="certificate"+number.toString();
         document.getElementById("cert").appendChild(element);
-        
+        number++;
     }
 </script>
 
@@ -144,7 +145,7 @@ $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='pro
                     <input type="text" name="num_of_cert" id="cer_no" style="display:none">
                 <dt> <label for="c" >certificates</label> </dt>
                        <div name="c"  class="mk_btn" onclick="add();">add certificate</div> 
-                       <div class="cer" id ="cert"></div> 
+                       <div class="cer" id ="cert" name="cert"></div> 
                     <div>
                 <dt class="inl" id="b1">gender</dt>
                         <dd  class="inl" id="r2">
