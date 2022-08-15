@@ -26,6 +26,14 @@ include("header.php");
             <a href="https://ethiopianorthodox.org/amharic/holybooks/orit/zetseat.pdf" >ኦሪት ዘጸአት</a></br>
           <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/rute.pdf >ኦሪት ዘሩት</a></br>
            <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/zelewaweyan.pdf >ኦሪት ዘሌዋውያን</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/zehulqe.pdf >ኦሪት ዘኁልቁ</a></br>
+         <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/zedagem.pdf >ኦሪት ዘዳግም</a></br>
+ <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/joshua.pdf >ኦሪት ዘኢያሱ</a></br>
+          <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/mesafent.pdf>ኦሪት ዘመሳፍንት</a></br>
+  <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/nebiat/samuel01.pdf>1ኛ መጽሐፈ ሳሙኤል</a></br>
+           <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/nebiat/samuel02.pdf>2ኛ መጽሐፈ ሳሙኤል</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/nebiat/negest01.pdf>1ኛ መጽሐፈ ነገሥት</a></br>
+         <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/nebiat/negest02.pdf>2ኛ መጽሐፈ ነገሥት</a></br>
                    
             <a href="http://" target="_blank" rel="noopener noreferrer">book 3</a></br>
             <a href="http://" target="_blank" rel="noopener noreferrer">book 4</a></br>
