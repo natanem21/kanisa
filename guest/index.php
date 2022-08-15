@@ -23,7 +23,7 @@ include("header.php");
             <h1 style="background-color:red"><center>books</center></h1>
             <a href="https://ethiopianorthodox.org/amharic/holybooks/orit/zelidet.pdf">orit ze lidet</a></br>
             <a href="https://ethiopianorthodox.org/amharic/holybooks/orit/zetseat.pdf" >orit ze tseat</a></br>
-            <a href="http://" target="_blank" rel="noopener noreferrer">book 3</a></br>
+            <a href="http://" >book 3</a></br>
             <a href="http://" target="_blank" rel="noopener noreferrer">book 4</a></br>
             <button>book</button>
         </div>
