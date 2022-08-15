@@ -30,7 +30,7 @@ include("header.php");?>
             <div class="post">
                 <h2><?php echo $x["header"]  ?>&nbsp&nbsp&nbsp</h2>
                 <?php if(($x["img"])!=null){?>
-                <img src="myFiles/<?php echo $x['img']?>" alt="post_img" class="p_img"> 
+                <img src="/chms_for_eotc/private/admin/myFiles/<?php echo $x['img']?>" alt="post_img" class="p_img"> 
                 <?php } ?>
                 <p class="p_cont"><?php echo $x["content"]?> </p>
             </div>

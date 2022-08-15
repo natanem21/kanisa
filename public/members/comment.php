@@ -11,6 +11,8 @@ commet types and description
 -->
 
     <h1>give comments</h1>
+    <?php  $now=date("Y-m-j",time());
+    echo $now;?>
 
     <?php  if(isset($_GET['r_id']))
     {
@@ -47,19 +49,19 @@ commet types and description
 </div>
 <?php  if(isset($_POST["d_cmt_pst"]))
 {
-    $now=date("Y-j-d",time());
-    $sql = "INSERT INTO `comment` (`com_id`, `cnr_id`, `rec_id`, `content`, `type`, `cmt_date`, `reported_per_id`, `reason`, `rep_date`, `evidence`, `post_id`) 
-    VALUES (NULL, '$_SESSION[id]', '$_POST[id]', '$_POST[comment] ', '0', '$now', '', '', '', '', '1');";
+    $now=date("Y-m-j",time());
+    $sql = "INSERT INTO `comment` (`com_id`, `cnr_id`, `rec_id`, `content`, `type`, `cmt_date`, `reported_per_2`, `reason`, `rep_date`, `evidence`, `post_id`) 
+    VALUES (NULL, '$_SESSION[id]', '$_POST[id]','$_POST[comment]','0','$now','', '', '', '', '1');";
     $DBC->query($sql);
 }
 ?>
 <?php  if(isset($_POST["p_cmt_pst"]))
 {
-    $now=date("Y-j-d",time());
+    $now=date("Y-m-j",time());
     $sql2 = "SELECT * FROM `posts` WHERE `post_id`='$_POST[id]'";
                         $res = $DBC->query($sql2);
                         $x = $res->fetch_assoc();
-    $sql = "INSERT INTO `comment` (`com_id`, `cnr_id`, `rec_id`, `content`, `type`, `cmt_date`, `reported_per_id`, `reason`, `rep_date`, `evidence`, `post_id`) 
+    $sql = "INSERT INTO `comment` (`com_id`, `cnr_id`, `rec_id`, `content`, `type`, `cmt_date`, `reported_per_1`, `reason`, `rep_date`, `evidence`, `post_id`) 
     VALUES (NULL, '$_SESSION[id]', '$x[m_id]', '$_POST[comment] ', '1', '$now', '', '', '', '', '$_POST[id]');";
     $DBC->query($sql);
 }

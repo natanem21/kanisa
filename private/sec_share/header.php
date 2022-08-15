@@ -23,16 +23,27 @@ if($_SESSION['role']!=1)
             <div class="o">
             <ul> register
                     <div class="i">
-                        <li><a href="<?php echo PRI_ROOT.'private/secretary/baptism.php'?>" class="">baptism</a></li>
-                        <li><a href="<?php echo PRI_ROOT.'private/secretary/death.php';?>" class="">death</a></li>
-                        <li><a href="<?php echo PRI_ROOT.'private/secretary/materials.php';?>" class="">materials</a></li>
+                        
+                      
+                       
                         <li><a href="<?php echo PRI_ROOT.'private/secretary/smallgroups.php';?>" class="">small groups</a></li>  
                         <li><a href="<?php echo PRI_ROOT.'private/secretary/needie.php';?>" class="">needies</a></li>
                         <li><a href="<?php echo PRI_ROOT.'private/secretary/needie.php';?>" class="">update church information</a></li>
                         
                     </div>
                 </ul>
+
+                
             </div>
+            <ul>
+                <li><a href="<?php echo PRI_ROOT.'private/secretary/baptism.php'?>" class="">baptism</a></li>
+                </ul>
+                <ul>
+                <li><a href="<?php echo PRI_ROOT.'private/secretary/materials.php';?>" class="">materials</a></li>
+                </ul>
+                <ul>
+                <li><a href="<?php echo PRI_ROOT.'private/secretary/death.php';?>" class="">death</a></li>
+                </ul>
             
             <ul>
                 <li><a href="<?php echo PRI_ROOT.'private/secretary/addpay.php';?>" class="">add payments</a></li>
@@ -45,6 +56,10 @@ if($_SESSION['role']!=1)
             <ul>
                 <li><a href="<?php echo PRI_ROOT.'private/secretary/marriage.php';?>" class="">marriage</a></li>
             </ul>
+            <ul>
+                <li><a href="<?php echo PRI_ROOT.'private/secretary/view_comment.php';?>" class="">comments</a></li>
+            </ul>
+
 
                 <div class="o1">
                 <ul> view

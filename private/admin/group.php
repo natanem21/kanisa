@@ -14,6 +14,22 @@ $result = $DBC->query($sql); ?>
         border:1px dashed red;
     }
 </style>
+<script>
+    function validate1()
+    {
+        alert("the first");
+    }
+    function validate2()
+    {
+        alert("the second");
+
+        var dox = document.getElementById("desc");
+        if(dox==null)
+        {
+            retun false;
+        }
+    }
+</script>
 <div class="content">
     <div class="new">
         <form action="group.php" method="post">
@@ -24,24 +40,18 @@ $result = $DBC->query($sql); ?>
                 </div>
                 <div class="tr">
                     <h3 class="td">group name : </h3>
-                    <input type="text" class="td" name="g_name" value="<?php  
+                    <input type="text" class="td"  required name="g_name" id="g_name"  onchange="validate1();"  value="<?php  
                     if(isset($_GET['id'])) 
                     {$sql2 = "SELECT * FROM `church_groups` WHERE `g_id`='$_GET[id]'";
                         $res = $DBC->query($sql2);
                         $x = $res->fetch_assoc();
                         echo $x['g_name'];
                        
-                     } ?>
-                    ">
+                     }?>">
                 </div>
                 <div class="tr">
                     <h3 class="td">description</h3>
-                    <textarea name="desc" id="desc" cols="30" rows="10" class="td"><?php  
-                    if(isset($_GET['id'])) 
-                    {
-                        echo $x['Description'];
-                       
-                     } ?>
+                    <textarea name="desc" id="desc" cols="30" rows="10" class="td" required  onchange="validate2();"><?php if(isset($_GET['id'])){echo $x['Description'];}?>
                     </textarea>
                 </div>
                 <div class="tr">
@@ -86,7 +96,7 @@ $result = $DBC->query($sql); ?>
 
     if(isset($_POST["pst_group"]))
     {
-        $now= date("Y-j-d ",time());
+        $now= date("Y-m-j ",time());
 
         $sql = "INSERT INTO `church_groups` ( `g_name`, `type`, `Description`, `created_date`, `added_by`) 
         VALUES ('$_POST[g_name]', '$_POST[type]', '$_POST[desc]', '$now', '$_SESSION[id]');";

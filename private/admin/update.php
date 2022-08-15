@@ -57,9 +57,11 @@
                     <form action="update.php?id=<?php  echo $x['id'];?>" method="post">
                         <div class="tr"> <h3 class="td">id : <?php  echo $x['id'];?></div>
                         <div class="tr"> <h3 class="td">image : <img src="/chms_for_eotc/guest/myFiles/<?php  echo $x['img'];?>" alt="profile image" class="profile"></div>
+                        <div class="tr"><h3 class="td">id: </h3><input type="text" name="me_id" id="" class="td" value="<?php  echo $x['id'];?>" disabled></div>
                         <div class="tr"> <h3  class="td">first name : </h3><input class="td" type="text" name="nm" value="<?php  echo $x['name'];?>"/></div>
                         <div class="tr"> <h3  class="td">last name : </h3><input class="td" type="text" name="lm" value="<?php  echo $x['last_name'];?>"/></div>
                         <div class="tr"> <h3  class="td">christian name :</h3> <input class="td" type="text" name="cn" value="<?php  echo $x['christ_name'];?>"/></div>
+                        <div class="tr"> <h3  class="td">password :</h3> <input class="td" type="text" name="pswd" value="<?php  echo $x['password'];?>"/></div>
                         <div class="tr"> <h3  class="td">age :</h3> <input class="td" type="date" name="ag" value="<?php  echo $x['age'];?>"/></div>
                         <div class="tr"> <h3  class="td">phone number : </h3><input class="td" type="text" name="pn" value="<?php  echo $x['phone'];?>"/></div>
                         <div class="tr"> <h3  class="td">email : </h3><input class="td" type="text" name="em" value="<?php  echo $x['email'];?>"/></div>
@@ -83,6 +85,15 @@
                                                                                             <option value="2" <?php  if($y !=NULL){if($y['type']==2){?> selected="selected"<?php }}?> >priest</option>
                                                                                             <option value="3" <?php if($y !=NULL){ if($y['type']==3){?>selected="selected"<?php }}?>>monk</option>
                                                                                         </SELECT></div>
+                        <div class="tr"><h3 class="td">role :</h3>
+                                <select name="role" id="role" class="td">
+                                    <option value="0" <?php if($x["role"]==0) { echo "selected"; } ?> >member</option>
+                                    <option value="1" <?php if($x["role"]==1){echo "selected";}?>>secretary</option>
+                                    <option value="2" <?php if($x["role"]==2){echo "selected";}?>>admin</option>
+                                    <option value="3" <?php if($x["role"]==3){echo "selected";}?>>father</option>
+                                    <option value="4" <?php if($x["role"]==4){echo "selected";}?>>teacher</option>
+                                </select>
+                        </div>
                                                                                                         <?php
                                                                                         if(isset($y['type']))
                                                                                         {
@@ -117,6 +128,7 @@
                                                                                                 
                                                                                         }
                                                                                         ?>
+                       
                        <div class="tr"><h3 class="td">certificates : </h3>
                                                                         <?php $sql10="SELECT * FROM `certificate` WHERE  `mem_id`='$x[id]'";
                                                                         $result6 = $DBC->query($sql10);
@@ -159,7 +171,8 @@
                                         `gender`='$_POST[gen]',
                                         `address`='$_POST[addr]',
                                         `reg_date`='$_POST[rd]',
-                                        `martial_stat`='$_POST[ms]'
+                                        `martial_stat`='$_POST[ms]',
+                                        `role`='$_POST[role]'
                                         WHERE `members`.`id` = $_GET[id]";
             
             $result =$DBC->query($sql5);

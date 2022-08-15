@@ -15,12 +15,25 @@ if(isset($_GET["id"]))
         display:none;
     }
 }
+h2 li {
+    display:inline;
+    border:1px dashed grey;
+    padding:5px;
+    margin:5px;
+    border-radius:10px;
+}
+h2 li:hover{
+    background-color:white;
+    color:red;
+    cursor:pointer;
+    border:none;
+}
 </style>
 
 <!-- uploading -->
 <div class="content">
     <h1>post church information</h1>
-    <h2><li id="n">new post</li><li id="o">older posts</li></h2>
+    <h2><li id="n">new post     </li><li id="o">older posts</li></h2>
 
     <form action="post.php" method="post" enctype="multipart/form-data">
        <div class="tb" id="new">

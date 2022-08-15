@@ -6,7 +6,7 @@ $result =$DBC->query($sql); //members table
 $x = $result->fetch_assoc();
 ?>
 <div class="content">
-    <form action="view.php" method="post">
+    <form action="view.php" method="post" enctype="multipart/form-data">
         <div class="tb">
             <h2 class="tr">profile datail </h2>
             <div class="tr">
@@ -20,6 +20,10 @@ $x = $result->fetch_assoc();
             <div class="tr">
                 <h3 class="td">password</h3>
                 <input type="password" name="pswd" id="pswd" class="td" value="<?php  echo $x['password'];?>">
+            </div>
+            <div class="tr">
+                <h3 class="td">profile image:</h3>
+                <input type="file" name="pro_img" id="pro" class="td" accept="images/*">
             </div>
             <div class="tr">
                 <h3 class="td">christ name</h3>
@@ -55,7 +59,7 @@ $x = $result->fetch_assoc();
             </div>
             <div class="tr">
                 <h3 class="td">job</h3>
-                <input type="text" name="job" id="job" class="td">
+                <input type="text" name="job" id="job" class="td"  value="<?php  echo $x['job'];?>">
             </div>
             <div class="tr">
                 <h3 class="td">position filled : </h3>
@@ -73,20 +77,49 @@ $x = $result->fetch_assoc();
 <?php
 if(isset($_POST["edit"]))
 {
-    $sql="UPDATE `members` SET  `name`='$_POST[name]',
-                                `last_name`='$_POST[lname]',
-                                `christ_name`='$_POST[c_name]',
-                               
-                                `clerical_pos`='$_POST[cl_pos]',
-                                `age`='$_POST[DOB]',
-                                `password` = '$_POST[pswd]',
-                                `gender`='$_POST[gen]',
-                                `phone`='$_POST[phone]',
-                                `address`='$_POST[addr]',
-                                `email`='$_POST[email]',
-                                `martial_stat`='$_POST[ms]',
-                                `job`='$_POST[job]'
-                                 WHERE `id`='$_SESSION[id]'";
+     
+    if($_FILES["pro_img"]["name"]==null)
+    {
+        $sql="UPDATE `members` SET  `name`='$_POST[name]',
+        `last_name`='$_POST[lname]',
+        `christ_name`='$_POST[c_name]',
+        `clerical_pos`='$_POST[cl_pos]',
+        `age`='$_POST[DOB]',
+        `password` = '$_POST[pswd]',
+        `gender`='$_POST[gen]',
+        `phone`='$_POST[phone]',
+        `address`='$_POST[addr]',
+        `email`='$_POST[email]',
+        `martial_stat`='$_POST[ms]',
+        `job`='$_POST[job]'
+         WHERE `id`='$_SESSION[id]'";   
+       
+    }
+    else{
+
+        $folderLocation = "../../../guest/myFiles"; 
+        if (!file_exists($folderLocation)) mkdir($folderLocation);
+    
+        $name = basename($_FILES["pro_img"]["name"]);
+        move_uploaded_file($_FILES["pro_img"]["tmp_name"], "$folderLocation/" .$name);
+        $sql="UPDATE `members` SET  `name`='$_POST[name]',
+        `last_name`='$_POST[lname]',
+        `christ_name`='$_POST[c_name]',
+        `img`='$name',
+        `clerical_pos`='$_POST[cl_pos]',
+        `age`='$_POST[DOB]',
+        `password` = '$_POST[pswd]',
+        `gender`='$_POST[gen]',
+        `phone`='$_POST[phone]',
+        `address`='$_POST[addr]',
+        `email`='$_POST[email]',
+        `martial_stat`='$_POST[ms]',
+        `job`='$_POST[job]'
+         WHERE `id`='$_SESSION[id]'";  
+     }
+   
+
+  
     $DBC->query($sql);
     header("location:view.php");
 }

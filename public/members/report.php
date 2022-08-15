@@ -21,18 +21,30 @@ commet types and description
         flex-wrap: wrap;
         
     }
+    #rep_her_btn:hover{
+        color:white;
+        cursor:pointer;
+
+    }
+    #rep_conf_btn:hover{
+        color:white;
+        cursor:pointer;
+        
+    }
+   
 </style>
+
 <div class="content">
     <div class="tabs">
         <ul>
-            <li>report conflict</li>
+            <li id="rep_conf_btn" >report conflict</li>
         </ul>
         <ul>
-        <li>report heretics</li>
+        <li id="rep_her_btn">report heretics</li>
         </ul>
     </div>
     <div class="main">
-        <div class="heretics">
+        <div class="heretics" id="rep_her_body">
             <form action="report.php" method="post" enctype="multipart/form-data">
                 <div class="tb">
                     <h2 class="tr">heretics report</h2>
@@ -65,7 +77,8 @@ commet types and description
                 </div>
             </form>
         </div>
-        <div class="conflict">
+        
+        <div class="conflict" id="rep_conf_body">
             <form action="report.php" method="post">
                 <div class="tb">
                     <h2 class="tr">report conflicts</h2>
@@ -111,6 +124,26 @@ commet types and description
         </div>
     </div>
 </div>
+<script>
+
+    const rep_her_body = document.getElementById("rep_her_body");
+    const rep_her_btn = document.getElementById("rep_her_btn");
+    const rep_conf_body=document.getElementById("rep_conf_body");
+    const rep_conf_btn=document.getElementById("rep_conf_btn");
+
+    rep_conf_body.style.display="none";
+    rep_conf_btn.addEventListener('click', () => {
+    rep_conf_body.style.display="block";
+    rep_her_body.style.display="none";
+    });
+    rep_her_btn.addEventListener('click', () => {
+    rep_conf_body.style.display="none";
+    rep_her_body.style.display="block";
+    });
+    
+   
+</script>
+
 
 <?php
 $now = date("Y-j-d",time());

@@ -196,7 +196,29 @@ nav{
     width: 10vw;
     top: -10px;
 }
-
+.tb{
+    display: table;
+    position: relative;
+    border-spacing: 4px;
+    
+ }
+ .tr{
+    display: table-row;
+  
+ }
+ .td{
+    display: table-cell;
+    border-color: rgb(14, 104, 143);
+    border-radius: 10px;
+   
+    
+ }
+ .content h2 a
+ {
+     text-decoration: none;
+     color:#aaa;
+     margin: 10px;
+ }
 
 
 .responsive-iframe
@@ -205,6 +227,7 @@ nav{
     height: 100%;
     border: none;
 }
+
 
 /*================
             responsive

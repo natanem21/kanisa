@@ -8,6 +8,28 @@ if($_SESSION['role']!=0)
 ?>
 
 <div class="content">
+<div class="go_left">
+            <h3 class="title"><u>notice </u></h3>
+            <?php
+$sql = "SELECT `Request_id`, `user_id`, `request_type`, `reason`, `service_customer`, `christ_name`, `sex`, `DOB`, `place_of_birth`, `address`, `God father or mother name`, `date` FROM `request` WHERE `user_id`='$_SESSION[id]'";
+$result = $DBC->query($sql);
+echo "you requests";
+while($x=$result->fetch_assoc())
+{
+echo $x["Request_id"];
+}
+            ?>
+            <h3 class="title">
+                <a href="http://">
+                    teachings
+                </a>
+            </h3>
+            <h3 class="title">
+                <a href="http://">
+                    new posts
+                </a>
+            </h3>
+        </div>
     <h1>index page</h1>
     <?php 
             $sql ="SELECT `post_id`,`header`,`content`,`name`,`posts`.`img`,`posts`.`date` FROM `posts` join `members` ON `m_id`=`id` WHERE `receiver`<='1'";

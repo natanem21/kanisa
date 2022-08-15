@@ -48,18 +48,22 @@
         </ul>
 
              <div class="o1">
-               <ul> view
+               <!-- <ul> view
                     <div class="i">
-                        <li><a href="<?php echo WWW_ROOT.'public/members/view/groups.php';?>" class="">groups</a></li>
-                        <li><a href="<?php echo WWW_ROOT.'public/members/view/admins.php';?>" class="">admins</a></li>
-                    </div>
-               </ul>
+                                  </div>
+               </ul> -->
+               <ul>
+               <li><a href="<?php echo WWW_ROOT.'public/members/view/groups.php';?>" class="">groups</a></li>
+                </ul>
+                <ul>
+                <li><a href="<?php echo WWW_ROOT.'public/members/view/admins.php';?>" class="">admins</a></li>
+             
+                </ul>
              </div>
         <ul>
             <li><a href="<?php echo WWW_ROOT.'private/shared/logout.php';?>" class="">logout</a></li>
         </ul>
-    </div>
-    </header>
+    
 
    
     

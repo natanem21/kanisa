@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fathers page</title>
-</head>
-<body>
+<?php include("../../private/shared/init.php");?>
+<?php include(_shared."/header.php");?>
+        <ul>
+            <li><a href="children.php" class="">view confession childrens</a></li>
+        </ul>
+        <ul>
+            <li><a href="heresy.php" class="">heretics</a></li>
+        </ul>
+
+</div>
+    </header>
 <?php
 if($_SESSION['role']!=3)
 {
     header("location:"."/chms_for_eotc/guest/login.php");
 }
 ?>
-    <h1>
-        this is fathers page
-    </h1>
-</body>
-</html>
+
+<div class="content">
+    <h1>fathers page</h1>
+</div>
+
+<?php include(_shared."/footer.php");?>

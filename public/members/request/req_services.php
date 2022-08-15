@@ -3,14 +3,30 @@
  $date = new DateTime();
  $now = date('Y-m-d ', $date->getTimestamp());
 ?>
+<style>
+    .req li{
+        -webkit-border-color:aqua;
+        border-color: aqua;
+   
+    -webkit-border-radius: 30px; 
+    -moz-border-radius:30px;   
+    border-radius: 30px;
+    -webkit-background-color:#6666;
+    background-color:#6666;
+    }
+    .req li:hover{
+       color:white;
+        cursor: pointer;
+    }
+</style>
 
         <!-- content of request -->
             <div class="content" style="backgroundcolor:green">
-            <p>the problem is when the input is taken to the database special keys interpreted different ways like '</p>
-                <h1 style="background-color:#7f34">request service</h1>
+           
+              
 
         <!-- tabs  -->
-            <div style="background-color:#6666">
+            <div style="background-color:#6666" class="req">
 
                 <ul>
                     <li id="b">baptism</li>
@@ -208,7 +224,7 @@
             if(isset($_POST['sb1']))
             {
                 $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `sex`, `DOB`, `place_of_birth`,`service_customer`,`reason`) 
-                            VALUES ('$_SESSION[id]', 'baptism', '$_POST[sx]', '$_POST[dob]', '$_POST[pob]','$_POST[nm]','$_POST[rm]');";
+                            VALUES ('$_SESSION[id]', '0', '$_POST[sx]', '$_POST[dob]', '$_POST[pob]','$_POST[nm]','$_POST[rm]');";
                 $result =$DBC->query($sql);
 
                     if($result)
@@ -227,7 +243,7 @@
         if(isset($_POST['sb2']))
             {
                 $sql = "INSERT INTO `request` ( `user_id`,`christ_name`, `request_type`, `date`, `service_customer`) 
-                                    VALUES ('$_SESSION[id]','$_POST[cm]', 'memorial', '$_POST[dm]', '$_POST[nm]');";
+                                    VALUES ('$_SESSION[id]','$_POST[cm]', '1', '$_POST[dm]', '$_POST[nm]');";
                 $result =$DBC->query($sql);
 
                     if($result)
@@ -246,7 +262,7 @@
         if(isset($_POST['sb3']))
         {
             $sql = "INSERT INTO `request` ( `user_id`, `request_type`, `date`, `reason`) 
-                                VALUES ('$_SESSION[id]', 'holy water', '$_POST[dt]', '$_POST[rsn]');";
+                                VALUES ('$_SESSION[id]', '2', '$_POST[dt]', '$_POST[rsn]');";
             $result =$DBC->query($sql);
 
                 if($result)
@@ -266,7 +282,7 @@
         {
         
             $sql = "INSERT INTO `request` ( `user_id`, `request_type`,`address`, `reason`,`date`) 
-                                VALUES ('$_SESSION[id]', 'confession father','$_POST[addr]', '$_POST[rsn]','$now');";
+                                VALUES ('$_SESSION[id]', '3','$_POST[addr]', '$_POST[rsn]','$now');";
             $result =$DBC->query($sql);
 
                 if($result)
@@ -285,7 +301,7 @@
         {
             
             $sql7 = "INSERT INTO `request`(`user_id`,`request_type`,`reason`,`address`,`date`) 
-                                VALUES('$_SESSION[id]','leaving','$_GET[rol]','$_GET[ptg]','$now');";
+                                VALUES('$_SESSION[id]','4','$_GET[rol]','$_GET[ptg]','$now');";
             $result7 = $DBC->query($sql7);
             if($result7)
             {

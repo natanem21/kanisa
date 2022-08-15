@@ -64,14 +64,14 @@ $result=$DBC->query($sql); ?>
                 <h3 class="td">view</h3>
             </div>
            
-                <?php $sql = "SELECT `marriage_id`,`husband_id`,`name` FROM `marriage` JOIN `members` ON `id`=`husband_id`"; 
+                <?php $sql = "SELECT `marriage_id`,`husband_id`,`wife_id`,`name` FROM `marriage` JOIN `members` ON `id`=`husband_id`"; 
                 $result = $DBC->query($sql);
                 while($x=$result->fetch_assoc())
                             {
                                  ?>
                     <div class="tr">
                         <h2 class="td"><?php echo $x["name"]?></h2>
-                        <h3 class="td"><a href="family.php?m_id=<?php echo $x['marriage_id']?>">detail</a></h3>
+                        <h3 class="td"><a href="family.php?mrrg_id=<?php echo $x['marriage_id']?>">detail</a></h3>
                     </div>
                                 <?php
                             }

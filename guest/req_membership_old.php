@@ -6,35 +6,7 @@ $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='pro
 ?>
 
 <style>
-            .c
-        {
-        
-            left: 30%;
-            background-color: antiquewhite;
-            border-radius:30px;
-            font-family: 'Roboto', sans-serif;
-            
-        
-        }
-       
-        .c3
-        {
-            background-color:black;
-        }
-        .certf
-        {
-            background-color:#6666;
-        }
-        .cert:hover
-        {
-            background-color:red;
-        }
-        @media  only screen and (max-width:600px)
-        {.c{
-            left:0%;
-        }
-        }
-   /*  .inl{
+    .inl{
     display:inline-block;
     position:relative;
     margin: 2px;
@@ -93,7 +65,7 @@ $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='pro
     {
         box-shadow:5px 5px 40px 10px rgb(175, 23, 235);
         color: aliceblue;
-    } */
+    }
 </style>
 
 <!-- form validation -->
@@ -136,93 +108,83 @@ $direct="<a href ='index.php'><img src='book.svg' alt='profile image' class='pro
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title;?></title>
-    <link rel="stylesheet" href="style.css">     
+    <link rel="stylesheet" href="style/style.css">     
 </head>
 <body> 
-    <div class="tb c">
+    <div class="container c2">
+ 
+        
         <form action="setpass.php" method="post" name="myForm" onsubmit="return validate();" enctype="multipart/form-data">
-            <h1 class="tr">create account</h1>
-
-            <div class="tr">
-                <h3 class="td">first name </h3>
-                <input type="text" name="u_name" id="" required class="td">
-            </div>
-
-            <div class="tr">
-                <h3 class="td">last name</h3>
-                <input type="text" name="l_name" id="" required  class="td">
-            </div>
-
-            <div class="tr">
-                <h3 class="td">christ name  </h3>
-                <input type="text" name="c_name" id="" required  class="td">
-            </div>
-
-            <div class="tr">
-                <h3 class="td">Date Of Birth</h3>
-                <input type="date" name="age" id="" required class="td">
-            </div>
-
-            <div class="tr">
-                <h3 class="td">phone number  </h3>
-                <input type="text" name="phone_addr" id="" required  class="td">
-            </div>
-            <div class="tr">
-                <h3 class="td">home adress  </h3>
-                <input type="text" name="home_addr" id="" required  class="td">
-            </div>
-                    
-             <div class="tr">
-                <h3 class="td">email  </h3>
-                <input type="email" name="email_addr" id="em" required class="td">
-             </div>   
-             <div class="tr">
-                <h3 class="td">job/proffession</h3>
-                <input type="text" name="job" id="" required class="td">
-             </div>    
-             <div class="tr">
-                <h3 class="td">profile image</h3>
-                <input type="file" name="prof_img" id="" accept="image/*">
-             </div>
-             <div class="tr certf">
-                <input type="text" name="num_of_cert" id="cer_no" style="display:none">
-                <div name="c"  class="mk_btn td" onclick="add();"> <h3>add certificate</h3></div> 
-                <div class="cer" id ="cert" name="cert"></div> 
-             </div>
-                <div class="tr">
-                   <h3 class="td">gender</h3>
-                   <select name="gender" class="ddw td" required>
+            <h1>create account</h1>
+            <div class="row">
+                <dl>
+                    <dt><label for="u_name">first name</label></dt>
+                        <dd><input type="text" name="u_name" id="" required></dd>
+                    <dt><label for="l_name">last name</label></dt>
+                        <dd><input type="text" name="l_name" id="" required></dd>
+                    <dt><label for="c_name">christ name</label></dt>
+                       <dd> <input type="text" name="c_name" id="" required></dd>
+                    <dt><label for="age">Date of birth</label></dt>
+                       <dd> <input type="date" name="age" id="" required></dd>
+                </dl>
+             
+               
+                <dl>
+                    <dt> <label for="phone_addr" required>phone</label></dt>
+                        <dd>  <input type="text" name="phone_addr" id="" required></dd>
+                    <dt> <label for="home_addr">home address</label></dt>
+                        <dd><input type="text" name="home_addr" id="" required></dd>
+                    <dt> <label for="email_addr">email</label> </dt>
+                        <dd><input type="email" name="email_addr" id="em" required></dd>
+                    <dt> <label for="job">job/proffession/</label> </dt>
+                        <dd><input type="text" name="job" id="" required></dd>
+                    <dt> <label for="prof_img">profile image</label> </dt>
+                        <dd><input type="file" name="prof_img" id="" accept="image/*"></dd>
+                </dl>
+                <dl>
+                    <input type="text" name="num_of_cert" id="cer_no" style="display:none">
+                <dt> <label for="c" >certificates</label> </dt>
+                       <div name="c"  class="mk_btn" onclick="add();">add certificate</div> 
+                       <div class="cer" id ="cert" name="cert"></div> 
+                    <div>
+                <dt class="inl" id="b1">gender</dt>
+                        <dd  class="inl" id="r2">
+                            <select name="gender" class="ddw" required>
                                 <option disabled selected value="x">select one</option>
                                 <option value="0">male</option>
                                 <option value="1">female</option>
                                
-                    </select>
-                </div>
-                
-                <div class="tr">
-                    <h3 class="td">clerical position</h3>
-                    <select name="position" class="ddw td" required>
+                            </select>
+                        </dd></div>
+                    <dt class="inl">clerical position</dt>
+                        <dd  class="inl">
+                            <select name="position" class="ddw" required>
                                 <option disabled selected value="x">select one</option>
                                 <option value="1">non clergy</option>
                                 <option value="2">deacon</option>
                                 <option value="3">priest</option>
                                 <option value="4">monk</option>
-                    </select>
-                </div>
-                   <div class="tr">
-                        <h3 class="td">martial status</h3>
-                        <select name="martial" class="ddw td" id="br3" required>
+                            </select>
+                        </dd>
+                  
+                </dl >
+                
+                <dl id="br2">
+                <dt class="inl">martial status</dt>
+                        <dd  class="inl">
+                            <select name="martial" class="ddw" id="br3" required>
                                  <option disabled selected value="x">select one</option>
                                 <option value="0">single</option>
                                 <option value="1">married</option>
                                 <option value="2">divorced</option>
-                        </select>
-                   </div>
-                
+                            </select>
+                        </dd> 
+                          
+                </dl>
                 <div id="operation" class="button"> 
-                  <input type="submit" value="create" name="sb" class="btn td"/>
+                  <input type="submit" value="create" name="sb" class="btn"/>
                 </div>
-            
+            </div>
         </form>  
         <div class="button">  <h4>already has an account <a href="login.php">login</a> </h4> </div>
       
