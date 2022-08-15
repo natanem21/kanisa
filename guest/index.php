@@ -43,6 +43,8 @@ include("header.php");
  <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/misale%20geeze%20and%20amahric.pdf>መጽሐፈ ምሳሌ</a></br>
  <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/mekbib%20geeze%20and%20amahric.pdf>መጽሐፈ መክብብ</a></br>
  <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/mehailiye%20solomon%20geeze%20and%20amahric.pdf>መኀልየ መኀልይ</a></br>
+ <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/ezerasutuael.pdf>መጽሐፈ ዕዝራ ሱቱኤል</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/ezrakale.pdf>መጽሐፈ ዕዝራ ካልዕ</a></br>
               
                    
             <a href="http://" target="_blank" rel="noopener noreferrer">book 3</a></br>
