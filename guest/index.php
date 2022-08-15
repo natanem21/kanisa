@@ -45,6 +45,16 @@ include("header.php");
  <a href="https://www.ethiopianorthodox.org/amharic/holybooks/orit/mehailiye%20solomon%20geeze%20and%20amahric.pdf>መኀልየ መኀልይ</a></br>
  <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/ezerasutuael.pdf>መጽሐፈ ዕዝራ ሱቱኤል</a></br>
 <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/ezrakale.pdf>መጽሐፈ ዕዝራ ካልዕ</a></br>
+         <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/tobit.pdf>መጽሐፈ ጦቢት</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/yodit.pdf>መጽሐፈ ዮዲት</a></br>
+         <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/aster.pdf>መጽሐፈ አስቴር</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/meqabiyanqedamawi.pdf>መጽሐፈ መቃብያን 1</a></br>
+         <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/meqabiyankale.pdf>መጽሐፈ መቃብያን 2</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/meqabiyansalis.pdf>መጽሐፈ መቃብያን 3</a></br>
+         <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/sirak.pdf>መጽሐፈ ሲራክ</a></br>
+ <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/yemenasatselot.pdf>ጸሎተ ምናሴ</a></br>
+           <a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/ermias.pdf>ተረፈ ኤርምያስ</a></br>
+<a href="https://www.ethiopianorthodox.org/amharic/holybooks/deutrocanonical/sosena.pdf>መጽሐፈ ሶስና</a></br>
               
                    
             <a href="http://" target="_blank" rel="noopener noreferrer">book 3</a></br>
